@@ -1,0 +1,24 @@
+# API Information
+
+
+main: {
+  kit: {
+    info: {
+      contact: {
+        name: "API Documentation"
+        url: "https://documenter.getpostman.com/view/14059948/TzecB4fH"
+      }
+      description: "This API allows you to retrieve information for Digimon Cards from the Digimon TCG. Requests are rate limited to 15 requests per 10 seconds to prevent abuse, and violating this limit can result in being temporarily blocked from accessing the API."
+      servers: [
+        {
+          description: "Production server"
+          url: "https://digimoncard.io/api-public"
+        }
+      ]
+      title: "Digimon TCG API"
+      version: "1.0.0"
+    }
+  }
+}
+
+}

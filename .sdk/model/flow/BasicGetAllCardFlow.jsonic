@@ -1,0 +1,22 @@
+# BasicGetAllCardFlow
+
+main: kit: flow: BasicGetAllCardFlow:
+{
+  entity: "get_all_card",
+  kind: "basic",
+  name: "BasicGetAllCardFlow",
+  step: [
+    {
+      op: "list",
+      valid: [
+        {
+          apply: "ItemExists",
+          def: {
+            ref: "get_all_card_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicGetAllCardFlow"
+}

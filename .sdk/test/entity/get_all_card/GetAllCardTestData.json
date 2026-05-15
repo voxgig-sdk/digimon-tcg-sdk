@@ -1,0 +1,90 @@
+{
+  "existing": {
+    "get_all_card": {
+      "GET_ALL_CARD00": {
+        "attribute": "sb4",
+        "cardnumber": "sb5",
+        "cardset": "sb6",
+        "color": "sb7",
+        "digivolve1cost": "sb8",
+        "digivolve1level": "sb9",
+        "digivolve2cost": "sba",
+        "digivolve2level": "sbb",
+        "dp": "sbc",
+        "dpcost": "sbd",
+        "effect": "sbe",
+        "image_url": "sbf",
+        "level": "sc0",
+        "name": "sc1",
+        "playcost": "sc2",
+        "rarity": "sc3",
+        "stage": "sc4",
+        "type": "sc5"
+      },
+      "GET_ALL_CARD01": {
+        "attribute": "s168",
+        "cardnumber": "s169",
+        "cardset": "s16a",
+        "color": "s16b",
+        "digivolve1cost": "s16c",
+        "digivolve1level": "s16d",
+        "digivolve2cost": "s16e",
+        "digivolve2level": "s16f",
+        "dp": "s170",
+        "dpcost": "s171",
+        "effect": "s172",
+        "image_url": "s173",
+        "level": "s174",
+        "name": "s175",
+        "playcost": "s176",
+        "rarity": "s177",
+        "stage": "s178",
+        "type": "s179"
+      },
+      "GET_ALL_CARD02": {
+        "attribute": "s21c",
+        "cardnumber": "s21d",
+        "cardset": "s21e",
+        "color": "s21f",
+        "digivolve1cost": "s220",
+        "digivolve1level": "s221",
+        "digivolve2cost": "s222",
+        "digivolve2level": "s223",
+        "dp": "s224",
+        "dpcost": "s225",
+        "effect": "s226",
+        "image_url": "s227",
+        "level": "s228",
+        "name": "s229",
+        "playcost": "s22a",
+        "rarity": "s22b",
+        "stage": "s22c",
+        "type": "s22d"
+      }
+    }
+  },
+  "new": {
+    "get_all_card": {
+      "get_all_card_ref01": {
+        "attribute": "s2d0",
+        "cardnumber": "s2d1",
+        "cardset": "s2d2",
+        "color": "s2d3",
+        "digivolve1cost": "s2d4",
+        "digivolve1level": "s2d5",
+        "digivolve2cost": "s2d6",
+        "digivolve2level": "s2d7",
+        "dp": "s2d8",
+        "dpcost": "s2d9",
+        "effect": "s2da",
+        "image_url": "s2db",
+        "level": "s2dc",
+        "name": "s2dd",
+        "playcost": "s2de",
+        "rarity": "s2df",
+        "stage": "s2e0",
+        "type": "s2e1"
+      }
+    }
+  }
+}

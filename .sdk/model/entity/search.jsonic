@@ -1,0 +1,226 @@
+# Entity: search
+
+main: kit: entity: search: {
+
+  alias: field: {}
+
+  fields: [
+    {
+      name: "attribute"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "cardnumber"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "cardset"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "color"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "digivolve1cost"
+      req: false
+      type: "`$INTEGER`"
+    }
+    {
+      name: "digivolve1level"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "digivolve2cost"
+      req: false
+      type: "`$INTEGER`"
+    }
+    {
+      name: "digivolve2level"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "dp"
+      req: false
+      type: "`$INTEGER`"
+    }
+    {
+      name: "dpcost"
+      req: false
+      type: "`$INTEGER`"
+    }
+    {
+      name: "effect"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "image_url"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "level"
+      req: false
+      type: "`$INTEGER`"
+    }
+    {
+      name: "name"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "playcost"
+      req: false
+      type: "`$INTEGER`"
+    }
+    {
+      name: "rarity"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "stage"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "type"
+      req: false
+      type: "`$STRING`"
+    }
+  ]
+
+  name: "search"
+  op: {
+    list: {
+      name: "list"
+      points: [
+        {
+          args: {
+            query: [
+              {
+                kind: "query"
+                name: "attribute"
+                orig: "attribute"
+                reqd: false
+                type: "`$STRING`"
+              }
+              {
+                kind: "query"
+                name: "card"
+                orig: "card"
+                reqd: false
+                type: "`$STRING`"
+              }
+              {
+                kind: "query"
+                name: "cardnumber"
+                orig: "cardnumber"
+                reqd: false
+                type: "`$STRING`"
+              }
+              {
+                kind: "query"
+                name: "color"
+                orig: "color"
+                reqd: false
+                type: "`$STRING`"
+              }
+              {
+                kind: "query"
+                name: "dpcost"
+                orig: "dpcost"
+                reqd: false
+                type: "`$INTEGER`"
+              }
+              {
+                kind: "query"
+                name: "level"
+                orig: "level"
+                reqd: false
+                type: "`$INTEGER`"
+              }
+              {
+                kind: "query"
+                name: "playcost"
+                orig: "playcost"
+                reqd: false
+                type: "`$INTEGER`"
+              }
+              {
+                kind: "query"
+                name: "series"
+                orig: "series"
+                reqd: false
+                type: "`$STRING`"
+              }
+              {
+                kind: "query"
+                name: "sort"
+                orig: "sort"
+                reqd: false
+                type: "`$STRING`"
+              }
+              {
+                kind: "query"
+                name: "sortdirection"
+                orig: "sortdirection"
+                reqd: false
+                type: "`$STRING`"
+              }
+              {
+                kind: "query"
+                name: "stage"
+                orig: "stage"
+                reqd: false
+                type: "`$STRING`"
+              }
+              {
+                kind: "query"
+                name: "type"
+                orig: "type"
+                reqd: false
+                type: "`$STRING`"
+              }
+            ]
+          }
+          method: "GET"
+          orig: "/search.php"
+          parts: [
+            "search.php"
+          ]
+          select: {
+            exist: [
+              "attribute"
+              "card"
+              "cardnumber"
+              "color"
+              "dpcost"
+              "level"
+              "playcost"
+              "series"
+              "sort"
+              "sortdirection"
+              "stage"
+              "type"
+            ]
+          }
+          transform: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

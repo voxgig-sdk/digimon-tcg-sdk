@@ -1,0 +1,352 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "Digimon TCG API",
+    "description": "This API allows you to retrieve information for Digimon Cards from the Digimon TCG. Requests are rate limited to 15 requests per 10 seconds to prevent abuse, and violating this limit can result in being temporarily blocked from accessing the API.",
+    "version": "1.0.0",
+    "contact": {
+      "name": "API Documentation",
+      "url": "https://documenter.getpostman.com/view/14059948/TzecB4fH"
+    }
+  },
+  "servers": [
+    {
+      "url": "https://digimoncard.io/api-public",
+      "description": "Production server"
+    }
+  ],
+  "paths": {
+    "/search.php": {
+      "get": {
+        "summary": "Search for Digimon cards",
+        "description": "Search for Digimon TCG cards based on various criteria such as card name, type, color, and other attributes.",
+        "operationId": "searchCards",
+        "parameters": [
+          {
+            "name": "card",
+            "in": "query",
+            "description": "Card name to search for",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "cardnumber",
+            "in": "query",
+            "description": "Card number to search for",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "color",
+            "in": "query",
+            "description": "Card color (e.g., Red, Blue, Yellow, Green, Black, Purple, White)",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "type",
+            "in": "query",
+            "description": "Card type (e.g., Digimon, Tamer, Option)",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "stage",
+            "in": "query",
+            "description": "Digimon stage (e.g., Rookie, Champion, Ultimate, Mega)",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "attribute",
+            "in": "query",
+            "description": "Digimon attribute (e.g., Vaccine, Virus, Data, Free)",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "level",
+            "in": "query",
+            "description": "Card level",
+            "required": false,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "dpcost",
+            "in": "query",
+            "description": "DP cost",
+            "required": false,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "playcost",
+            "in": "query",
+            "description": "Play cost",
+            "required": false,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "sort",
+            "in": "query",
+            "description": "Sort field (e.g., name, cardnumber, color)",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "sortdirection",
+            "in": "query",
+            "description": "Sort direction (asc or desc)",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "asc",
+                "desc"
+              ]
+            }
+          },
+          {
+            "name": "series",
+            "in": "query",
+            "description": "Card series or set",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response with card data",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Card"
+                  }
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Rate limit exceeded - too many requests",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/getAllCards.php": {
+      "get": {
+        "summary": "Get all Digimon cards",
+        "description": "Retrieve all available Digimon TCG cards in the database. Note: This endpoint may return a large dataset.",
+        "operationId": "getAllCards",
+        "parameters": [
+          {
+            "name": "sort",
+            "in": "query",
+            "description": "Sort field",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "sortdirection",
+            "in": "query",
+            "description": "Sort direction (asc or desc)",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "asc",
+                "desc"
+              ]
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response with all cards",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Card"
+                  }
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Rate limit exceeded - too many requests",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Card": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "Name of the card"
+          },
+          "cardnumber": {
+            "type": "string",
+            "description": "Unique card number identifier"
+          },
+          "color": {
+            "type": "string",
+            "description": "Card color (e.g., Red, Blue, Yellow, Green, Black, Purple, White)"
+          },
+          "type": {
+            "type": "string",
+            "description": "Type of card (e.g., Digimon, Tamer, Option)"
+          },
+          "stage": {
+            "type": "string",
+            "description": "Digimon evolution stage (e.g., Rookie, Champion, Ultimate, Mega)",
+            "nullable": true
+          },
+          "attribute": {
+            "type": "string",
+            "description": "Digimon attribute (e.g., Vaccine, Virus, Data, Free)",
+            "nullable": true
+          },
+          "level": {
+            "type": "integer",
+            "description": "Card level",
+            "nullable": true
+          },
+          "playcost": {
+            "type": "integer",
+            "description": "Cost to play the card",
+            "nullable": true
+          },
+          "dp": {
+            "type": "integer",
+            "description": "Digimon power points",
+            "nullable": true
+          },
+          "dpcost": {
+            "type": "integer",
+            "description": "DP cost for evolution or abilities",
+            "nullable": true
+          },
+          "effect": {
+            "type": "string",
+            "description": "Card effect text",
+            "nullable": true
+          },
+          "digivolve1cost": {
+            "type": "integer",
+            "description": "First digivolution cost",
+            "nullable": true
+          },
+          "digivolve1level": {
+            "type": "string",
+            "description": "Level required for first digivolution",
+            "nullable": true
+          },
+          "digivolve2cost": {
+            "type": "integer",
+            "description": "Second digivolution cost",
+            "nullable": true
+          },
+          "digivolve2level": {
+            "type": "string",
+            "description": "Level required for second digivolution",
+            "nullable": true
+          },
+          "image_url": {
+            "type": "string",
+            "description": "URL to the card image"
+          },
+          "cardset": {
+            "type": "string",
+            "description": "Card set or series this card belongs to"
+          },
+          "rarity": {
+            "type": "string",
+            "description": "Card rarity (e.g., Common, Uncommon, Rare, Super Rare)"
+          }
+        }
+      },
+      "Error": {
+        "type": "object",
+        "properties": {
+          "error": {
+            "type": "string",
+            "description": "Error message"
+          },
+          "message": {
+            "type": "string",
+            "description": "Detailed error description"
+          }
+        }
+      }
+    }
+  },
+  "x-rate-limit": {
+    "limit": 15,
+    "period": "10 seconds",
+    "description": "Requests are rate limited to 15 requests per 10 seconds to prevent abuse. Violating this limit can result in being temporarily blocked from accessing the API."
+  }
+}
