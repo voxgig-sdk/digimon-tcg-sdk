@@ -6,8 +6,8 @@ import (
 	"strings"
 	"testing"
 
-	sdk "github.com/voxgig-sdk/digimon-tcg-sdk"
-	"github.com/voxgig-sdk/digimon-tcg-sdk/core"
+	sdk "github.com/voxgig-sdk/digimon-tcg-sdk/go"
+	"github.com/voxgig-sdk/digimon-tcg-sdk/go/core"
 )
 
 func TestGetAllCardDirect(t *testing.T) {
