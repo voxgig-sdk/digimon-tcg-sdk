@@ -93,14 +93,12 @@ func searchDirectSetup(mockres any) *searchDirectSetupResult {
 	env := envOverride(map[string]any{
 		"DIGIMONTCG_TEST_SEARCH_ENTID": map[string]any{},
 		"DIGIMONTCG_TEST_LIVE":    "FALSE",
-		"DIGIMONTCG_APIKEY":       "NONE",
 	})
 
 	live := env["DIGIMONTCG_TEST_LIVE"] == "TRUE"
 
 	if live {
 		mergedOpts := map[string]any{
-			"apikey": env["DIGIMONTCG_APIKEY"],
 		}
 		client := sdk.NewDigimonTcgSDK(mergedOpts)
 

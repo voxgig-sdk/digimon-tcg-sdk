@@ -62,14 +62,12 @@ def search_direct_setup(mockres)
   env = Runner.env_override({
     "DIGIMONTCG_TEST_SEARCH_ENTID" => {},
     "DIGIMONTCG_TEST_LIVE" => "FALSE",
-    "DIGIMONTCG_APIKEY" => "NONE",
   })
 
   live = env["DIGIMONTCG_TEST_LIVE"] == "TRUE"
 
   if live
     merged_opts = {
-      "apikey" => env["DIGIMONTCG_APIKEY"],
     }
     client = DigimonTcgSDK.new(merged_opts)
     return {

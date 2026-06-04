@@ -68,14 +68,12 @@ function get_all_card_direct_setup($mockres)
     $env = Runner::env_override([
         "DIGIMONTCG_TEST_GET_ALL_CARD_ENTID" => [],
         "DIGIMONTCG_TEST_LIVE" => "FALSE",
-        "DIGIMONTCG_APIKEY" => "NONE",
     ]);
 
     $live = $env["DIGIMONTCG_TEST_LIVE"] === "TRUE";
 
     if ($live) {
         $merged_opts = [
-            "apikey" => $env["DIGIMONTCG_APIKEY"],
         ];
         $client = new DigimonTcgSDK($merged_opts);
         return [

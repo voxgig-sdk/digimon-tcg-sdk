@@ -31,9 +31,7 @@ loading a specific record.
 ```ruby
 require_relative "DigimonTcg_sdk"
 
-client = DigimonTcgSDK.new({
-  "apikey" => ENV["DIGIMON-TCG_APIKEY"],
-})
+client = DigimonTcgSDK.new({})
 ```
 
 ### 2. List getallcards
@@ -127,7 +125,6 @@ Create a `.env.local` file at the project root:
 
 ```
 DIGIMON-TCG_TEST_LIVE=TRUE
-DIGIMON-TCG_APIKEY=<your-key>
 ```
 
 Then run:
@@ -150,7 +147,6 @@ Creates a new SDK client.
 
 | Option | Type | Description |
 | --- | --- | --- |
-| `apikey` | `String` | API key for authentication. |
 | `base` | `String` | Base URL of the API server. |
 | `prefix` | `String` | URL path prefix prepended to all requests. |
 | `suffix` | `String` | URL path suffix appended to all requests. |

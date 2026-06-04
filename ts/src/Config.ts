@@ -38,10 +38,6 @@ class Config {
   options = {
     base: 'https://digimoncard.io/api-public',
 
-    auth: {
-      prefix: 'Bearer',
-    },
-
     headers: {
       "content-type": "application/json"
     },

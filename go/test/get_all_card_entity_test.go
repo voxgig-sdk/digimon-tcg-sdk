@@ -119,7 +119,6 @@ func get_all_cardBasicSetup(extra map[string]any) *entityTestSetup {
 		"DIGIMONTCG_TEST_GET_ALL_CARD_ENTID": idmap,
 		"DIGIMONTCG_TEST_LIVE":      "FALSE",
 		"DIGIMONTCG_TEST_EXPLAIN":   "FALSE",
-		"DIGIMONTCG_APIKEY":         "NONE",
 	})
 
 	idmapResolved := core.ToMapAny(env["DIGIMONTCG_TEST_GET_ALL_CARD_ENTID"])
@@ -130,7 +129,6 @@ func get_all_cardBasicSetup(extra map[string]any) *entityTestSetup {
 	if env["DIGIMONTCG_TEST_LIVE"] == "TRUE" {
 		mergedOpts := vs.Merge([]any{
 			map[string]any{
-				"apikey": env["DIGIMONTCG_APIKEY"],
 			},
 			extra,
 		})

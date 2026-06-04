@@ -17,9 +17,7 @@ loading a specific record.
 ```ts
 import { DigimonTcgSDK } from 'digimon-tcg'
 
-const client = new DigimonTcgSDK({
-  apikey: process.env.DIGIMON-TCG_APIKEY,
-})
+const client = new DigimonTcgSDK({})
 ```
 
 ### 2. List getallcards
@@ -84,7 +82,7 @@ const result = await client.Planet().load({ id: 'test01' })
 You can also use the instance method:
 
 ```ts
-const client = new DigimonTcgSDK({ apikey: '...' })
+const client = new DigimonTcgSDK()
 const testClient = client.tester()
 ```
 
@@ -120,7 +118,6 @@ const logger = {
 }
 
 const client = new DigimonTcgSDK({
-  apikey: '...',
   extend: [logger],
 })
 ```
@@ -131,7 +128,6 @@ Create a `.env.local` file at the project root:
 
 ```
 DIGIMON-TCG_TEST_LIVE=TRUE
-DIGIMON-TCG_APIKEY=<your-key>
 ```
 
 Then run:
@@ -149,7 +145,6 @@ cd ts && npm test
 
 ```ts
 new DigimonTcgSDK(options?: {
-  apikey?: string
   base?: string
   prefix?: string
   suffix?: string
@@ -160,7 +155,6 @@ new DigimonTcgSDK(options?: {
 
 | Option | Type | Description |
 | --- | --- | --- |
-| `apikey` | `string` | API key for authentication. |
 | `base` | `string` | Base URL of the API server. |
 | `prefix` | `string` | URL path prefix prepended to all requests. |
 | `suffix` | `string` | URL path suffix appended to all requests. |
