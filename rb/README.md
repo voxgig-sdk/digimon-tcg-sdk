@@ -10,13 +10,13 @@ The Ruby SDK for the DigimonTcg API — an entity-oriented client using idiomati
 
 ## Install
 ```bash
-gem install digimon-tcg-sdk
+gem install voxgig-sdk-digimon-tcg
 ```
 
 Or add to your `Gemfile`:
 
 ```ruby
-gem "digimon-tcg-sdk"
+gem "voxgig-sdk-digimon-tcg"
 ```
 
 Then run:

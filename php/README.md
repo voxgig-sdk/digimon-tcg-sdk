@@ -10,7 +10,7 @@ The PHP SDK for the DigimonTcg API — an entity-oriented client using PHP conve
 
 ## Install
 ```bash
-composer require voxgig/digimon-tcg-sdk
+composer require voxgig-sdk/digimon-tcg
 ```
 
 

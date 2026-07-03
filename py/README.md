@@ -10,7 +10,7 @@ The Python SDK for the DigimonTcg API — an entity-oriented client following Py
 
 ## Install
 ```bash
-pip install digimon-tcg-sdk
+pip install voxgig-sdk-digimon-tcg
 ```
 
 Or install from source:

@@ -8,12 +8,14 @@ source = {
   dir = "digimon-tcg-sdk/lua"
 }
 description = {
-  summary = "DigimonTcg SDK for Lua",
-  license = "MIT"
+  summary = "Unofficial generated Lua SDK for the Digimon TCG public API. Not affiliated with or endorsed by the upstream API provider.",
+  homepage = "https://github.com/voxgig-sdk/digimon-tcg-sdk",
+  issues_url = "https://github.com/voxgig-sdk/digimon-tcg-sdk/issues",
+  license = "MIT",
+  labels = { "voxgig", "sdk", "generated-sdk", "openapi", "api-client", "digimon-tcg" }
 }
 dependencies = {
   "lua >= 5.3",
-  "dkjson >= 2.5",
   "dkjson >= 2.5",
 }
 build = {
