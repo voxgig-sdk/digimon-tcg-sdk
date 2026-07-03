@@ -1,20 +1,8 @@
 # DigimonTcg SDK
 
-Look up Digimon Trading Card Game cards by name, colour, type, attribute, pack and more
+Digimon TCG API client, generated from the OpenAPI spec.
 
 > TypeScript, Python, PHP, Golang, Ruby, Lua SDKs, a CLI, an interactive REPL, and an MCP server for AI agents — all generated from one OpenAPI spec by [@voxgig/sdkgen](https://github.com/voxgig/sdkgen).
-
-## About Digimon TCG API
-
-The [Digimon TCG API](https://digimoncard.io/api-public) is a public, community-facing service that exposes card data from the Digimon Trading Card Game. It lets you list every card or search for specific cards by their printed attributes.
-
-What you get from the API:
-
-- List of all cards, sortable by name and series
-- Search by card name, colour, type, attribute, card ID, expansion pack and other printed fields
-- Per-card details such as name, description, colour, card type, attribute, card number, expansion pack and rarity
-
-The service is hosted at `https://digimoncard.io/api-public` with CORS enabled for browser use. No authentication is required, but requests are rate-limited to 15 per 10 seconds; exceeding that threshold temporarily blocks further access.
 
 ## Try it
 
@@ -48,29 +36,31 @@ gem install digimon-tcg-sdk
 luarocks install digimon-tcg-sdk
 ```
 
-## 30-second quickstart
+## Quickstart
 
 ### TypeScript
 
 ```ts
 import { DigimonTcgSDK } from 'digimon-tcg'
 
-const client = new DigimonTcgSDK({})
+const client = new DigimonTcgSDK({
+  apikey: process.env.DIGIMON-TCG_APIKEY,
+})
 
 // List all getallcards
 const getallcards = await client.GetAllCard().list()
+console.log(getallcards.data)
 ```
 
-See the [TypeScript README](ts/README.md) for the
-full guide, or scroll down for the same example in other languages.
+See the [TypeScript README](ts/README.md) for the full guide.
 
-## What's in the box
+## Surfaces
 
-| Surface | Use it for | Path |
-| --- | --- | --- |
-| **SDK** (TypeScript, Python, PHP, Golang, Ruby, Lua) | App integration | `ts/` `py/` `php/` `go/` `rb/` `lua/` |
-| **CLI** | Scripts, CI, ops, one-off API calls | `go-cli/` |
-| **MCP server** | AI agents (Claude, Cursor, Cline) | `go-mcp/` |
+| Surface | Path |
+| --- | --- |
+| **SDK** (TypeScript, Python, PHP, Golang, Ruby, Lua) | `ts/` `py/` `php/` `go/` `rb/` `lua/` |
+| **CLI** | `go-cli/` |
+| **MCP server** | `go-mcp/` |
 
 ## Use it from an AI agent (MCP)
 
@@ -100,8 +90,8 @@ The API exposes 2 entities:
 
 | Entity | Description | API path |
 | --- | --- | --- |
-| **GetAllCard** | Retrieves the full Digimon card catalogue, with options to sort by name or series. | `/getAllCards.php` |
-| **Search** | Looks up specific cards by printed attributes such as name, colour, type, attribute, card ID or expansion pack. | `/search.php` |
+| **GetAllCard** |  | `/getAllCards.php` |
+| **Search** |  | `/search.php` |
 
 Each entity supports the following operations where available: **load**,
 **list**, **create**, **update**, and **remove**.
@@ -111,12 +101,16 @@ Each entity supports the following operations where available: **load**,
 ### Python
 
 ```python
+import os
 from digimontcg_sdk import DigimonTcgSDK
 
-client = DigimonTcgSDK({})
+client = DigimonTcgSDK({
+    "apikey": os.environ.get("DIGIMON-TCG_APIKEY"),
+})
 
 # List all getallcards
-getallcards, err = client.GetAllCard(None).list(None, None)
+getallcards, err = client.GetAllCard().list()
+print(getallcards)
 ```
 
 ### PHP
@@ -125,10 +119,13 @@ getallcards, err = client.GetAllCard(None).list(None, None)
 <?php
 require_once 'digimontcg_sdk.php';
 
-$client = new DigimonTcgSDK([]);
+$client = new DigimonTcgSDK([
+    "apikey" => getenv("DIGIMON-TCG_APIKEY"),
+]);
 
 // List all getallcards
-[$getallcards, $err] = $client->GetAllCard(null)->list(null, null);
+[$getallcards, $err] = $client->GetAllCard()->list();
+print_r($getallcards);
 ```
 
 ### Golang
@@ -136,10 +133,13 @@ $client = new DigimonTcgSDK([]);
 ```go
 import sdk "github.com/voxgig-sdk/digimon-tcg-sdk/go"
 
-client := sdk.NewDigimonTcgSDK(map[string]any{})
+client := sdk.NewDigimonTcgSDK(map[string]any{
+    "apikey": os.Getenv("DIGIMON-TCG_APIKEY"),
+})
 
 // List all getallcards
 getallcards, err := client.GetAllCard(nil).List(nil, nil)
+fmt.Println(getallcards)
 ```
 
 ### Ruby
@@ -147,10 +147,13 @@ getallcards, err := client.GetAllCard(nil).List(nil, nil)
 ```ruby
 require_relative "DigimonTcg_sdk"
 
-client = DigimonTcgSDK.new({})
+client = DigimonTcgSDK.new({
+  "apikey" => ENV["DIGIMON-TCG_APIKEY"],
+})
 
 # List all getallcards
-getallcards, err = client.GetAllCard(nil).list(nil, nil)
+getallcards, err = client.GetAllCard().list
+puts getallcards
 ```
 
 ### Lua
@@ -158,10 +161,13 @@ getallcards, err = client.GetAllCard(nil).list(nil, nil)
 ```lua
 local sdk = require("digimon-tcg_sdk")
 
-local client = sdk.new({})
+local client = sdk.new({
+  apikey = os.getenv("DIGIMON-TCG_APIKEY"),
+})
 
 -- List all getallcards
-local getallcards, err = client:GetAllCard(nil):list(nil, nil)
+local getallcards, err = client:GetAllCard():list()
+print(getallcards)
 ```
 
 ## Unit testing in offline mode
@@ -180,25 +186,21 @@ const result = await client.GetAllCard().load({ id: 'test01' })
 ### Python
 
 ```python
-client = DigimonTcgSDK.test(None, None)
-result, err = client.GetAllCard(None).load(
-    {"id": "test01"}, None
-)
+client = DigimonTcgSDK.test()
+result, err = client.GetAllCard().load({"id": "test01"})
 ```
 
 ### PHP
 
 ```php
-$client = DigimonTcgSDK::test(null, null);
-[$result, $err] = $client->GetAllCard(null)->load(
-    ["id" => "test01"], null
-);
+$client = DigimonTcgSDK::test();
+[$result, $err] = $client->GetAllCard()->load(["id" => "test01"]);
 ```
 
 ### Golang
 
 ```go
-client := sdk.TestSDK(nil, nil)
+client := sdk.Test()
 result, err := client.GetAllCard(nil).Load(
     map[string]any{"id": "test01"}, nil,
 )
@@ -207,19 +209,15 @@ result, err := client.GetAllCard(nil).Load(
 ### Ruby
 
 ```ruby
-client = DigimonTcgSDK.test(nil, nil)
-result, err = client.GetAllCard(nil).load(
-  { "id" => "test01" }, nil
-)
+client = DigimonTcgSDK.test
+result, err = client.GetAllCard().load({ "id" => "test01" })
 ```
 
 ### Lua
 
 ```lua
-local client = sdk.test(nil, nil)
-local result, err = client:GetAllCard(nil):load(
-  { id = "test01" }, nil
-)
+local client = sdk.test()
+local result, err = client:GetAllCard():load({ id = "test01" })
 ```
 
 ## How it works
@@ -323,10 +321,6 @@ local result, err = client:direct({
 - [Golang](go/README.md)
 - [Ruby](rb/README.md)
 - [Lua](lua/README.md)
-
-## Using the Digimon TCG API
-
-- Upstream: [https://digimoncard.io/api-public](https://digimoncard.io/api-public)
 
 ---
 

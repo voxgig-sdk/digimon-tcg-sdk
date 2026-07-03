@@ -83,6 +83,7 @@ def get_all_card_basic_setup(extra)
     "DIGIMONTCG_TEST_GET_ALL_CARD_ENTID" => idmap,
     "DIGIMONTCG_TEST_LIVE" => "FALSE",
     "DIGIMONTCG_TEST_EXPLAIN" => "FALSE",
+    "DIGIMONTCG_APIKEY" => "NONE",
   })
 
   idmap_resolved = Helpers.to_map(
@@ -94,6 +95,7 @@ def get_all_card_basic_setup(extra)
   if env["DIGIMONTCG_TEST_LIVE"] == "TRUE"
     merged_opts = Vs.merge([
       {
+        "apikey" => env["DIGIMONTCG_APIKEY"],
       },
       extra || {},
     ])

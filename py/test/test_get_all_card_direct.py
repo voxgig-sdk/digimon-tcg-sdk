@@ -61,12 +61,14 @@ def _get_all_card_direct_setup(mockres):
     env = runner.env_override({
         "DIGIMONTCG_TEST_GET_ALL_CARD_ENTID": {},
         "DIGIMONTCG_TEST_LIVE": "FALSE",
+        "DIGIMONTCG_APIKEY": "NONE",
     })
 
     live = env.get("DIGIMONTCG_TEST_LIVE") == "TRUE"
 
     if live:
         merged_opts = {
+            "apikey": env.get("DIGIMONTCG_APIKEY"),
         }
         client = DigimonTcgSDK(merged_opts)
         return {

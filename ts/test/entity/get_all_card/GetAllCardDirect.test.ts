@@ -79,12 +79,14 @@ function directSetup(mockres?: any) {
   const env = envOverride({
     'DIGIMONTCG_TEST_GET_ALL_CARD_ENTID': {},
     'DIGIMONTCG_TEST_LIVE': 'FALSE',
+    'DIGIMONTCG_APIKEY': 'NONE',
   })
 
   const live = 'TRUE' === env.DIGIMONTCG_TEST_LIVE
 
   if (live) {
     const client = new DigimonTcgSDK({
+      apikey: env.DIGIMONTCG_APIKEY,
     })
 
     let idmap: any = env['DIGIMONTCG_TEST_GET_ALL_CARD_ENTID']

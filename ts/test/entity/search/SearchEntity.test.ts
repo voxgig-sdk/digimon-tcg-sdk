@@ -113,6 +113,7 @@ function basicSetup(extra?: any) {
     'DIGIMON_TCG_TEST_SEARCH_ENTID': idmap,
     'DIGIMON_TCG_TEST_LIVE': 'FALSE',
     'DIGIMON_TCG_TEST_EXPLAIN': 'FALSE',
+    'DIGIMON_TCG_APIKEY': 'NONE',
   })
 
   idmap = env['DIGIMON_TCG_TEST_SEARCH_ENTID']
@@ -122,6 +123,7 @@ function basicSetup(extra?: any) {
   if (live) {
     client = new DigimonTcgSDK(merge([
       {
+        apikey: env.DIGIMON_TCG_APIKEY,
       },
       extra
     ]))

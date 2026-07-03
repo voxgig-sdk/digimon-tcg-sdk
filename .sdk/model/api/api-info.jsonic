@@ -17,23 +17,7 @@ main: {
       ]
       title: "Digimon TCG API"
       version: "1.0.0"
-      tagline: "Look up Digimon Trading Card Game cards by name, colour, type, attribute, pack and more"
-      homepage: "https://digimoncard.io/api-public"
-      docs_url: "https://digimoncard.io/api-public"
-      about_md: `The [Digimon TCG API](https://digimoncard.io/api-public) is a public, community-facing service that exposes card data from the Digimon Trading Card Game. It lets you list every card or search for specific cards by their printed attributes.
-
-What you get from the API:
-
-- List of all cards, sortable by name and series
-- Search by card name, colour, type, attribute, card ID, expansion pack and other printed fields
-- Per-card details such as name, description, colour, card type, attribute, card number, expansion pack and rarity
-
-The service is hosted at \`https://digimoncard.io/api-public\` with CORS enabled for browser use. No authentication is required, but requests are rate-limited to 15 per 10 seconds; exceeding that threshold temporarily blocks further access.`
-      entity_desc: {
-        get_all_card: "Retrieves the full Digimon card catalogue, with options to sort by name or series."
-        search: "Looks up specific cards by printed attributes such as name, colour, type, attribute, card ID or expansion pack."
-      }
-      auth: false
     }
   }
 }
+
