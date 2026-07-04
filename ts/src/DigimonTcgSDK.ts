@@ -3,6 +3,8 @@
 import { GetAllCardEntity } from './entity/GetAllCardEntity'
 import { SearchEntity } from './entity/SearchEntity'
 
+export type * from './DigimonTcgTypes'
+
 
 import { inspect } from 'node:util'
 
@@ -203,12 +205,28 @@ class DigimonTcgSDK {
 
 
 
+  _get_all_card?: GetAllCardEntity
+
+  // Idiomatic facade: `client.get_all_card.list()` / `client.get_all_card.load({ id })`.
+  get get_all_card(): GetAllCardEntity {
+    return (this._get_all_card ??= new GetAllCardEntity(this, undefined))
+  }
+
+  /** @deprecated Use `client.get_all_card` instead. */
   GetAllCard(data?: any) {
     const self = this
     return new GetAllCardEntity(self,data)
   }
 
 
+  _search?: SearchEntity
+
+  // Idiomatic facade: `client.search.list()` / `client.search.load({ id })`.
+  get search(): SearchEntity {
+    return (this._search ??= new SearchEntity(this, undefined))
+  }
+
+  /** @deprecated Use `client.search` instead. */
   Search(data?: any) {
     const self = this
     return new SearchEntity(self,data)

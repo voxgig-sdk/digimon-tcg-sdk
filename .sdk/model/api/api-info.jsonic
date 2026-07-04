@@ -4,6 +4,7 @@
 main: {
   kit: {
     info: {
+      auth: false
       contact: {
         name: "API Documentation"
         url: "https://documenter.getpostman.com/view/14059948/TzecB4fH"

@@ -245,11 +245,17 @@ func (sdk *DigimonTcgSDK) Direct(fetchargs map[string]any) (map[string]any, erro
 }
 
 
+// GetAllCard returns a GetAllCard entity bound to this client.
+// Idiomatic usage: client.GetAllCard(nil).List(nil, nil) or
+// client.GetAllCard(nil).Load(map[string]any{"id": ...}, nil).
 func (sdk *DigimonTcgSDK) GetAllCard(data map[string]any) DigimonTcgEntity {
 	return NewGetAllCardEntityFunc(sdk, data)
 }
 
 
+// Search returns a Search entity bound to this client.
+// Idiomatic usage: client.Search(nil).List(nil, nil) or
+// client.Search(nil).Load(map[string]any{"id": ...}, nil).
 func (sdk *DigimonTcgSDK) Search(data map[string]any) DigimonTcgEntity {
 	return NewSearchEntityFunc(sdk, data)
 }

@@ -93,14 +93,12 @@ func get_all_cardDirectSetup(mockres any) *get_all_cardDirectSetupResult {
 	env := envOverride(map[string]any{
 		"DIGIMONTCG_TEST_GET_ALL_CARD_ENTID": map[string]any{},
 		"DIGIMONTCG_TEST_LIVE":    "FALSE",
-		"DIGIMONTCG_APIKEY":       "NONE",
 	})
 
 	live := env["DIGIMONTCG_TEST_LIVE"] == "TRUE"
 
 	if live {
 		mergedOpts := map[string]any{
-			"apikey": env["DIGIMONTCG_APIKEY"],
 		}
 		client := sdk.NewDigimonTcgSDK(mergedOpts)
 

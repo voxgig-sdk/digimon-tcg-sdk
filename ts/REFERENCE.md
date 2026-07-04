@@ -18,7 +18,6 @@ Create a new SDK client instance.
 | Name | Type | Description |
 | --- | --- | --- |
 | `options` | `object` | SDK configuration options. |
-| `options.apikey` | `string` | API key for authentication. |
 | `options.base` | `string` | Base URL for API requests. |
 | `options.prefix` | `string` | URL prefix appended after base. |
 | `options.suffix` | `string` | URL suffix appended after path. |
@@ -122,7 +121,7 @@ Alias for `DigimonTcgSDK.test()`.
 ## GetAllCardEntity
 
 ```ts
-const get_all_card = client.GetAllCard()
+const get_all_card = client.get_all_card
 ```
 
 ### Fields
@@ -155,7 +154,7 @@ const get_all_card = client.GetAllCard()
 List entities matching the given criteria. Returns an array.
 
 ```ts
-const results = await client.GetAllCard().list()
+const results = await client.get_all_card.list()
 ```
 
 ### Common Methods
@@ -189,7 +188,7 @@ Return a copy of the entity options.
 ## SearchEntity
 
 ```ts
-const search = client.Search()
+const search = client.search
 ```
 
 ### Fields
@@ -222,7 +221,7 @@ const search = client.Search()
 List entities matching the given criteria. Returns an array.
 
 ```ts
-const results = await client.Search().list()
+const results = await client.search.list()
 ```
 
 ### Common Methods

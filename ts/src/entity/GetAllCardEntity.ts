@@ -14,9 +14,13 @@ import type {
   Control,
 } from '../types'
 
+import type {
+  GetAllCard,
+  GetAllCardListMatch,
+} from '../DigimonTcgTypes'
 
 // TODO: needs Entity superclass
-class GetAllCardEntity extends DigimonTcgEntityBase {
+class GetAllCardEntity extends DigimonTcgEntityBase<GetAllCard> {
 
   constructor(client: DigimonTcgSDK, entopts: any) {
     super(client, entopts)
@@ -33,7 +37,7 @@ class GetAllCardEntity extends DigimonTcgEntityBase {
 
 
 
-  async list(this: any, reqmatch?: any, ctrl?: Control) {
+  async list(this: any, reqmatch?: GetAllCardListMatch, ctrl?: Control): Promise<GetAllCard[]> {
 
     const utility = this._utility
 
@@ -133,7 +137,9 @@ class GetAllCardEntity extends DigimonTcgEntityBase {
         throw err
       }
       else {
-        return undefined
+        // Off-happy-path (throw disabled): typed as any so the method's
+        // Promise<GetAllCard[]> return stays clean under strict null checks.
+        return undefined as any
       }
     }
   }

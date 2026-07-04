@@ -19,7 +19,6 @@ Create a new SDK client instance.
 | Name | Type | Description |
 | --- | --- | --- |
 | `options` | `table` | SDK configuration options. |
-| `options.apikey` | `string` | API key for authentication. |
 | `options.base` | `string` | Base URL for API requests. |
 | `options.prefix` | `string` | URL prefix appended after base. |
 | `options.suffix` | `string` | URL suffix appended after path. |
@@ -88,7 +87,7 @@ same parameters as `direct()`.
 ## GetAllCardEntity
 
 ```lua
-local get_all_card = client:GetAllCard(nil)
+local get_all_card = client:get_all_card(nil)
 ```
 
 ### Fields
@@ -121,7 +120,7 @@ local get_all_card = client:GetAllCard(nil)
 List entities matching the given criteria. Returns an array.
 
 ```lua
-local results, err = client:GetAllCard():list()
+local results, err = client:get_all_card():list()
 ```
 
 ### Common Methods
@@ -157,7 +156,7 @@ Return the entity name.
 ## SearchEntity
 
 ```lua
-local search = client:Search(nil)
+local search = client:search(nil)
 ```
 
 ### Fields
@@ -190,7 +189,7 @@ local search = client:Search(nil)
 List entities matching the given criteria. Returns an array.
 
 ```lua
-local results, err = client:Search():list()
+local results, err = client:search():list()
 ```
 
 ### Common Methods

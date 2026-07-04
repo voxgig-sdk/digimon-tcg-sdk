@@ -43,8 +43,7 @@ class GetAllCardEntityTest < Minitest::Test
     get_all_card_ref01_ent = client.GetAllCard(nil)
     get_all_card_ref01_match = {}
 
-    get_all_card_ref01_list_result, err = get_all_card_ref01_ent.list(get_all_card_ref01_match, nil)
-    assert_nil err
+    get_all_card_ref01_list_result = get_all_card_ref01_ent.list(get_all_card_ref01_match, nil)
     assert get_all_card_ref01_list_result.is_a?(Array)
 
   end
@@ -83,7 +82,6 @@ def get_all_card_basic_setup(extra)
     "DIGIMONTCG_TEST_GET_ALL_CARD_ENTID" => idmap,
     "DIGIMONTCG_TEST_LIVE" => "FALSE",
     "DIGIMONTCG_TEST_EXPLAIN" => "FALSE",
-    "DIGIMONTCG_APIKEY" => "NONE",
   })
 
   idmap_resolved = Helpers.to_map(
@@ -95,7 +93,6 @@ def get_all_card_basic_setup(extra)
   if env["DIGIMONTCG_TEST_LIVE"] == "TRUE"
     merged_opts = Vs.merge([
       {
-        "apikey" => env["DIGIMONTCG_APIKEY"],
       },
       extra || {},
     ])

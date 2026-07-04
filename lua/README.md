@@ -9,12 +9,9 @@ The Lua SDK for the DigimonTcg API — an entity-oriented client using Lua conve
 
 
 ## Install
-```bash
-luarocks install voxgig-sdk-digimon-tcg
-```
-
-If the module is not yet published, add the source directory to
-your `LUA_PATH`:
+This package is not yet published to LuaRocks. Install it from the
+GitHub release tag (`lua/vX.Y.Z`, see [Releases](https://github.com/voxgig-sdk/digimon-tcg-sdk/releases)),
+or add the source directory to your `LUA_PATH`:
 
 ```bash
 export LUA_PATH="path/to/lua/?.lua;path/to/lua/?/init.lua;;"
@@ -31,15 +28,13 @@ loading a specific record.
 ```lua
 local sdk = require("digimon-tcg_sdk")
 
-local client = sdk.new({
-  apikey = os.getenv("DIGIMON-TCG_APIKEY"),
-})
+local client = sdk.new()
 ```
 
 ### 2. List getallcards
 
 ```lua
-local result, err = client:GetAllCard():list()
+local result, err = client:getallcard():list()
 if err then error(err) end
 
 if type(result) == "table" then
@@ -93,7 +88,7 @@ Create a mock client for unit testing — no server required:
 ```lua
 local client = sdk.test()
 
-local result, err = client:DigimonTcg():load({ id = "test01" })
+local result, err = client:getallcard():load({ id = "test01" })
 -- result contains mock response data
 ```
 
@@ -126,8 +121,7 @@ local client = sdk.new({
 Create a `.env.local` file at the project root:
 
 ```
-DIGIMON-TCG_TEST_LIVE=TRUE
-DIGIMON-TCG_APIKEY=<your-key>
+DIGIMON_TCG_TEST_LIVE=TRUE
 ```
 
 Then run:
@@ -150,7 +144,6 @@ Creates a new SDK client.
 
 | Option | Type | Description |
 | --- | --- | --- |
-| `apikey` | `string` | API key for authentication. |
 | `base` | `string` | Base URL of the API server. |
 | `prefix` | `string` | URL path prefix prepended to all requests. |
 | `suffix` | `string` | URL path suffix appended to all requests. |
@@ -272,7 +265,7 @@ API path: `/search.php`
 
 ### GetAllCard
 
-Create an instance: `const get_all_card = client.GetAllCard()`
+Create an instance: `const get_all_card = client.get_all_card`
 
 #### Operations
 
@@ -306,13 +299,13 @@ Create an instance: `const get_all_card = client.GetAllCard()`
 #### Example: List
 
 ```ts
-const get_all_cards = await client.GetAllCard().list()
+const get_all_cards = await client.get_all_card.list()
 ```
 
 
 ### Search
 
-Create an instance: `const search = client.Search()`
+Create an instance: `const search = client.search`
 
 #### Operations
 
@@ -346,7 +339,7 @@ Create an instance: `const search = client.Search()`
 #### Example: List
 
 ```ts
-const searchs = await client.Search().list()
+const searchs = await client.search.list()
 ```
 
 
@@ -421,11 +414,11 @@ Entity instances are stateful. After a successful `load`, the entity
 stores the returned data and match criteria internally.
 
 ```lua
-local moon = client:Moon(nil)
-moon:load({ planet_id = "earth", id = "luna" }, nil)
+local getallcard = client:getallcard()
+getallcard:load({ id = "example_id" })
 
--- moon:data_get() now returns the loaded moon data
--- moon:match_get() returns the last match criteria
+-- getallcard:data_get() now returns the loaded getallcard data
+-- getallcard:match_get() returns the last match criteria
 ```
 
 Call `make()` to create a fresh instance with the same configuration

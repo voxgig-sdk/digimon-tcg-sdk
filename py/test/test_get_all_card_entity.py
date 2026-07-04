@@ -50,8 +50,7 @@ class TestGetAllCardEntity:
         get_all_card_ref01_ent = client.GetAllCard(None)
         get_all_card_ref01_match = {}
 
-        get_all_card_ref01_list_result, err = get_all_card_ref01_ent.list(get_all_card_ref01_match, None)
-        assert err is None
+        get_all_card_ref01_list_result = get_all_card_ref01_ent.list(get_all_card_ref01_match, None)
         assert isinstance(get_all_card_ref01_list_result, list)
 
 
@@ -92,7 +91,6 @@ def _get_all_card_basic_setup(extra):
         "DIGIMONTCG_TEST_GET_ALL_CARD_ENTID": idmap,
         "DIGIMONTCG_TEST_LIVE": "FALSE",
         "DIGIMONTCG_TEST_EXPLAIN": "FALSE",
-        "DIGIMONTCG_APIKEY": "NONE",
     })
 
     idmap_resolved = helpers.to_map(
@@ -103,7 +101,6 @@ def _get_all_card_basic_setup(extra):
     if env.get("DIGIMONTCG_TEST_LIVE") == "TRUE":
         merged_opts = vs.merge([
             {
-                "apikey": env.get("DIGIMONTCG_APIKEY"),
             },
             extra or {},
         ])

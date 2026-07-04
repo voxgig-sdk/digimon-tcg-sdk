@@ -81,6 +81,10 @@ end
 
 
 
+---@param reqmatch GetAllCardListMatch
+---@param ctrl? table
+---@return GetAllCard[]
+---@return string? err
 function GetAllCardEntity:list(reqmatch, ctrl)
   local utility = self._utility
   local ctx = utility.make_context({

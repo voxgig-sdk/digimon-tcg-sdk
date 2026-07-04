@@ -50,8 +50,7 @@ class GetAllCardEntityTest extends TestCase
         $get_all_card_ref01_ent = $client->GetAllCard(null);
         $get_all_card_ref01_match = [];
 
-        [$get_all_card_ref01_list_result, $err] = $get_all_card_ref01_ent->list($get_all_card_ref01_match, null);
-        $this->assertNull($err);
+        $get_all_card_ref01_list_result = $get_all_card_ref01_ent->list($get_all_card_ref01_match, null);
         $this->assertIsArray($get_all_card_ref01_list_result);
 
     }
@@ -86,7 +85,6 @@ function get_all_card_basic_setup($extra)
         "DIGIMONTCG_TEST_GET_ALL_CARD_ENTID" => $idmap,
         "DIGIMONTCG_TEST_LIVE" => "FALSE",
         "DIGIMONTCG_TEST_EXPLAIN" => "FALSE",
-        "DIGIMONTCG_APIKEY" => "NONE",
     ]);
 
     $idmap_resolved = Helpers::to_map(
@@ -98,7 +96,6 @@ function get_all_card_basic_setup($extra)
     if ($env["DIGIMONTCG_TEST_LIVE"] === "TRUE") {
         $merged_opts = Vs::merge([
             [
-                "apikey" => $env["DIGIMONTCG_APIKEY"],
             ],
             $extra ?? [],
         ]);
