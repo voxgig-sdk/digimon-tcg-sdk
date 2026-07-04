@@ -121,7 +121,7 @@ Alias for `DigimonTcgSDK.test()`.
 ## GetAllCardEntity
 
 ```ts
-const get_all_card = client.get_all_card
+const get_all_card = client.GetAllCard()
 ```
 
 ### Fields
@@ -154,7 +154,7 @@ const get_all_card = client.get_all_card
 List entities matching the given criteria. Returns an array.
 
 ```ts
-const results = await client.get_all_card.list()
+const results = await client.GetAllCard().list()
 ```
 
 ### Common Methods
@@ -188,7 +188,7 @@ Return a copy of the entity options.
 ## SearchEntity
 
 ```ts
-const search = client.search
+const search = client.Search()
 ```
 
 ### Fields
@@ -221,7 +221,7 @@ const search = client.search
 List entities matching the given criteria. Returns an array.
 
 ```ts
-const results = await client.search.list()
+const results = await client.Search().list()
 ```
 
 ### Common Methods

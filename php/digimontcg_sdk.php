@@ -233,10 +233,10 @@ class DigimonTcgSDK
 
     private $_get_all_card = null;
 
-    // Idiomatic facade: $client->get_all_card()->list() / ->load(["id" => ...]).
-    // Also serves the deprecated PascalCase alias GetAllCard() (PHP method
-    // names are case-insensitive).
-    public function get_all_card($data = null)
+    // Canonical facade: $client->GetAllCard()->list() / ->load(["id" => ...]).
+    // PHP method names are case-insensitive, so lowercase $client->get_all_card()
+    // resolves here too.
+    public function GetAllCard($data = null)
     {
         require_once __DIR__ . '/entity/get_all_card_entity.php';
         if ($data === null) {
@@ -251,10 +251,10 @@ class DigimonTcgSDK
 
     private $_search = null;
 
-    // Idiomatic facade: $client->search()->list() / ->load(["id" => ...]).
-    // Also serves the deprecated PascalCase alias Search() (PHP method
-    // names are case-insensitive).
-    public function search($data = null)
+    // Canonical facade: $client->Search()->list() / ->load(["id" => ...]).
+    // PHP method names are case-insensitive, so lowercase $client->search()
+    // resolves here too.
+    public function Search($data = null)
     {
         require_once __DIR__ . '/entity/search_entity.php';
         if ($data === null) {

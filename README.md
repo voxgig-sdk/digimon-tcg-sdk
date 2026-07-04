@@ -26,9 +26,11 @@ import { DigimonTcgSDK } from '@voxgig-sdk/digimon-tcg'
 
 const client = new DigimonTcgSDK()
 
-// List all getallcards
-const getallcards = await client.getallcard.list()
-console.log(getallcards.data)
+// List all getallcards (returns GetAllCard[])
+const getallcards = await client.GetAllCard().list()
+for (const getallcard of getallcards) {
+  console.log(getallcard)
+}
 ```
 
 See the [TypeScript README](ts/README.md) for the full guide.
@@ -84,9 +86,10 @@ from digimontcg_sdk import DigimonTcgSDK
 
 client = DigimonTcgSDK()
 
-# List all getallcards
-getallcards = client.getallcard.list()
-print(getallcards)
+# List all getallcards (returns a list, raises on error)
+getallcards = client.GetAllCard().list({})
+for getallcard in getallcards:
+    print(getallcard)
 ```
 
 ### PHP
@@ -97,8 +100,8 @@ require_once 'digimontcg_sdk.php';
 
 $client = new DigimonTcgSDK();
 
-// List all getallcards (throws on error)
-$getallcards = $client->getallcard()->list();
+// List all getallcards (returns an array; throws on error)
+$getallcards = $client->GetAllCard()->list();
 print_r($getallcards);
 ```
 
@@ -121,8 +124,8 @@ require_relative "DigimonTcg_sdk"
 
 client = DigimonTcgSDK.new
 
-# List all getallcards
-getallcards = client.getallcard.list
+# List all getallcards (returns an Array; raises on error)
+getallcards = client.GetAllCard.list
 puts getallcards
 ```
 
@@ -134,7 +137,7 @@ local sdk = require("digimon-tcg_sdk")
 local client = sdk.new()
 
 -- List all getallcards
-local getallcards, err = client:getallcard():list()
+local getallcards, err = client:GetAllCard():list()
 print(getallcards)
 ```
 
@@ -147,22 +150,27 @@ in-memory mock, so unit tests run offline.
 
 ```ts
 const client = DigimonTcgSDK.test()
-const result = await client.getallcard.load({ id: 'test01' })
-// result.ok === true, result.data contains mock data
+const getallcard = await client.GetAllCard().load({ id: 'test01' })
+// getallcard is a bare GetAllCard populated with mock data
+console.log(getallcard)
 ```
 
 ### Python
 
 ```python
 client = DigimonTcgSDK.test()
-result = client.getallcard.load({"id": "test01"})
+getallcard = client.GetAllCard().load({"id": "test01"})
+print(getallcard)
 ```
 
 ### PHP
 
 ```php
-$client = DigimonTcgSDK::test();
-$result = $client->getallcard()->load(["id" => "test01"]);
+// Seed fixture data so offline calls resolve without a live server.
+$client = DigimonTcgSDK::test([
+    "entity" => ["getallcard" => ["test01" => ["id" => "test01"]]],
+]);
+$getallcard = $client->GetAllCard()->load(["id" => "test01"]);
 ```
 
 ### Golang
@@ -177,15 +185,18 @@ result, err := client.GetAllCard(nil).Load(
 ### Ruby
 
 ```ruby
-client = DigimonTcgSDK.test
-result = client.getallcard.load({ "id" => "test01" })
+# Seed fixture data so offline calls resolve without a live server.
+client = DigimonTcgSDK.test({
+  "entity" => { "getallcard" => { "test01" => { "id" => "test01" } } },
+})
+getallcard = client.GetAllCard.load({ "id" => "test01" })
 ```
 
 ### Lua
 
 ```lua
 local client = sdk.test()
-local result, err = client:getallcard():load({ id = "test01" })
+local result, err = client:GetAllCard():load({ id = "test01" })
 ```
 
 ## How it works
@@ -233,6 +244,9 @@ const result = await client.direct({
   method: 'GET',
   params: { id: 'example' },
 })
+if (result instanceof Error) {
+  throw result
+}
 console.log(result.data)
 ```
 

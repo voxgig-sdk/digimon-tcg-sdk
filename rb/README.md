@@ -28,16 +28,14 @@ require_relative "DigimonTcg_sdk"
 client = DigimonTcgSDK.new
 ```
 
-### 2. List getallcards
+### 2. List getallcard records
 
 ```ruby
 begin
-  result = client.getallcard.list
-  if result.is_a?(Array)
-    result.each do |item|
-      d = item.data_get
-      puts "#{d["id"]} #{d["name"]}"
-    end
+  # list returns an Array of GetAllCard records — iterate directly.
+  getallcards = client.GetAllCard.list
+  getallcards.each do |item|
+    puts "#{item["id"]} #{item["name"]}"
   end
 rescue => err
   warn "list failed: #{err}"
@@ -85,13 +83,17 @@ end
 
 ### Use test mode
 
-Create a mock client for unit testing — no server required:
+Create a mock client for unit testing — no server required. Seed fixture
+data via the `entity` option so offline calls resolve without a live server:
 
 ```ruby
-client = DigimonTcgSDK.test
+client = DigimonTcgSDK.test({
+  "entity" => { "getallcard" => { "test01" => { "id" => "test01" } } },
+})
 
-result = client.getallcard.load({ "id" => "test01" })
-# result contains mock response data
+# load returns the bare mock record (raises on error).
+getallcard = client.GetAllCard.load({ "id" => "test01" })
+puts getallcard
 ```
 
 ### Use a custom fetch function
@@ -268,7 +270,7 @@ API path: `/search.php`
 
 ### GetAllCard
 
-Create an instance: `const get_all_card = client.get_all_card`
+Create an instance: `get_all_card = client.GetAllCard`
 
 #### Operations
 
@@ -301,14 +303,15 @@ Create an instance: `const get_all_card = client.get_all_card`
 
 #### Example: List
 
-```ts
-const get_all_cards = await client.get_all_card.list()
+```ruby
+# list returns an Array of GetAllCard records (raises on error).
+get_all_cards = client.GetAllCard.list
 ```
 
 
 ### Search
 
-Create an instance: `const search = client.search`
+Create an instance: `search = client.Search`
 
 #### Operations
 
@@ -341,8 +344,9 @@ Create an instance: `const search = client.search`
 
 #### Example: List
 
-```ts
-const searchs = await client.search.list()
+```ruby
+# list returns an Array of Search records (raises on error).
+searchs = client.Search.list
 ```
 
 
@@ -417,7 +421,7 @@ Entity instances are stateful. After a successful `load`, the entity
 stores the returned data and match criteria internally.
 
 ```ruby
-getallcard = client.getallcard
+getallcard = client.GetAllCard
 getallcard.load({ "id" => "example_id" })
 
 # getallcard.data_get now returns the loaded getallcard data

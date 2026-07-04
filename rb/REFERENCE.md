@@ -90,7 +90,7 @@ same parameters as `direct()`. Raises on error.
 ## GetAllCardEntity
 
 ```ruby
-get_all_card = client.get_all_card
+get_all_card = client.GetAllCard
 ```
 
 ### Fields
@@ -123,7 +123,7 @@ get_all_card = client.get_all_card
 List entities matching the given criteria. Returns an array. Raises on error.
 
 ```ruby
-results = client.get_all_card.list(nil)
+results = client.GetAllCard.list(nil)
 ```
 
 ### Common Methods
@@ -159,7 +159,7 @@ Return the entity name.
 ## SearchEntity
 
 ```ruby
-search = client.search
+search = client.Search
 ```
 
 ### Fields
@@ -192,7 +192,7 @@ search = client.search
 List entities matching the given criteria. Returns an array. Raises on error.
 
 ```ruby
-results = client.search.list(nil)
+results = client.Search.list(nil)
 ```
 
 ### Common Methods

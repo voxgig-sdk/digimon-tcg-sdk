@@ -220,41 +220,21 @@ class DigimonTcgSDK:
         }
 
 
-    @property
-    def get_all_card(self):
-        """Idiomatic facade: client.get_all_card.list() / client.get_all_card.load({"id": ...})."""
-        from entity.get_all_card_entity import GetAllCardEntity
-        cached = getattr(self, "_get_all_card", None)
-        if cached is None:
-            cached = GetAllCardEntity(self, None)
-            self._get_all_card = cached
-        return cached
-
-    def GetAllCard(self, data=None):
-        # Deprecated: use client.get_all_card instead.
+    def GetAllCard(self, data=None) -> "GetAllCardEntity":
+        """Entity factory: client.GetAllCard().list({}) / client.GetAllCard().load({"id": ...})."""
         from entity.get_all_card_entity import GetAllCardEntity
         return GetAllCardEntity(self, data)
 
 
-    @property
-    def search(self):
-        """Idiomatic facade: client.search.list() / client.search.load({"id": ...})."""
-        from entity.search_entity import SearchEntity
-        cached = getattr(self, "_search", None)
-        if cached is None:
-            cached = SearchEntity(self, None)
-            self._search = cached
-        return cached
-
-    def Search(self, data=None):
-        # Deprecated: use client.search instead.
+    def Search(self, data=None) -> "SearchEntity":
+        """Entity factory: client.Search().list({}) / client.Search().load({"id": ...})."""
         from entity.search_entity import SearchEntity
         return SearchEntity(self, data)
 
 
 
     @classmethod
-    def test(cls, testopts=None, sdkopts=None):
+    def test(cls, testopts=None, sdkopts=None) -> "DigimonTcgSDK":
         if sdkopts is None:
             sdkopts = {}
         sdkopts = vs.clone(sdkopts)
@@ -274,3 +254,10 @@ class DigimonTcgSDK:
         sdk.mode = "test"
 
         return sdk
+
+
+from typing import TYPE_CHECKING
+
+if TYPE_CHECKING:
+    from entity.get_all_card_entity import GetAllCardEntity
+    from entity.search_entity import SearchEntity

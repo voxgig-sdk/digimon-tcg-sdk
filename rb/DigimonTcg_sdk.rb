@@ -208,26 +208,14 @@ class DigimonTcgSDK
   end
 
 
-  # Idiomatic facade: client.get_all_card.list / client.get_all_card.load({ "id" => ... })
-  def get_all_card
-    require_relative 'entity/get_all_card_entity'
-    @get_all_card ||= GetAllCardEntity.new(self, nil)
-  end
-
-  # Deprecated: use client.get_all_card instead.
+  # Canonical facade: client.GetAllCard.list / client.GetAllCard.load({ "id" => ... })
   def GetAllCard(data = nil)
     require_relative 'entity/get_all_card_entity'
     GetAllCardEntity.new(self, data)
   end
 
 
-  # Idiomatic facade: client.search.list / client.search.load({ "id" => ... })
-  def search
-    require_relative 'entity/search_entity'
-    @search ||= SearchEntity.new(self, nil)
-  end
-
-  # Deprecated: use client.search instead.
+  # Canonical facade: client.Search.list / client.Search.load({ "id" => ... })
   def Search(data = nil)
     require_relative 'entity/search_entity'
     SearchEntity.new(self, data)

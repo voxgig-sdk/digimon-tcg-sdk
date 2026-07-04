@@ -31,14 +31,16 @@ from digimontcg_sdk import DigimonTcgSDK
 client = DigimonTcgSDK()
 ```
 
-### 2. List getallcards
+### 2. List getallcard records
+
+`list()` returns a `list` of records (each a `dict`) and raises on
+error — iterate it directly.
 
 ```python
 try:
-    result = client.getallcard.list()
-    for item in result:
-        d = item.data_get()
-        print(d["id"], d["name"])
+    getallcards = client.GetAllCard().list({})
+    for getallcard in getallcards:
+        print(getallcard)
 except Exception as err:
     print(f"list failed: {err}")
 ```
@@ -86,8 +88,9 @@ Create a mock client for unit testing — no server required:
 ```python
 client = DigimonTcgSDK.test()
 
-result = client.getallcard.load({"id": "test01"})
-# result contains mock response data
+# Entity ops return the bare record and raise on error.
+getallcard = client.GetAllCard().load({"id": "test01"})
+# getallcard contains the mock response record
 ```
 
 ### Use a custom fetch function
@@ -265,7 +268,7 @@ API path: `/search.php`
 
 ### GetAllCard
 
-Create an instance: `const get_all_card = client.get_all_card`
+Create an instance: `get_all_card = client.GetAllCard()`
 
 #### Operations
 
@@ -298,14 +301,14 @@ Create an instance: `const get_all_card = client.get_all_card`
 
 #### Example: List
 
-```ts
-const get_all_cards = await client.get_all_card.list()
+```python
+get_all_cards = client.GetAllCard().list({})
 ```
 
 
 ### Search
 
-Create an instance: `const search = client.search`
+Create an instance: `search = client.Search()`
 
 #### Operations
 
@@ -338,8 +341,8 @@ Create an instance: `const search = client.search`
 
 #### Example: List
 
-```ts
-const searchs = await client.search.list()
+```python
+searchs = client.Search().list({})
 ```
 
 
@@ -413,7 +416,7 @@ Entity instances are stateful. After a successful `load`, the entity
 stores the returned data and match criteria internally.
 
 ```python
-getallcard = client.getallcard
+getallcard = client.GetAllCard()
 getallcard.load({"id": "example_id"})
 
 # getallcard.data_get() now returns the loaded getallcard data

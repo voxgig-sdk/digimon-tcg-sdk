@@ -244,8 +244,9 @@ end
 
 
 
--- Idiomatic facade: client:get_all_card():list() / client:get_all_card():load({ id = ... })
-function DigimonTcgSDK:get_all_card(data)
+-- Idiomatic facade: client:GetAllCard():list() / client:GetAllCard():load({ id = ... })
+-- Entity access is capitalised (PascalCase) for parity with the other SDKs.
+function DigimonTcgSDK:GetAllCard(data)
   local EntityMod = require("entity.get_all_card_entity")
   if data == nil then
     if self._get_all_card == nil then
@@ -256,15 +257,10 @@ function DigimonTcgSDK:get_all_card(data)
   return EntityMod.new(self, data)
 end
 
--- Deprecated: use client:get_all_card() instead.
-function DigimonTcgSDK:GetAllCard(data)
-  local EntityMod = require("entity.get_all_card_entity")
-  return EntityMod.new(self, data)
-end
 
-
--- Idiomatic facade: client:search():list() / client:search():load({ id = ... })
-function DigimonTcgSDK:search(data)
+-- Idiomatic facade: client:Search():list() / client:Search():load({ id = ... })
+-- Entity access is capitalised (PascalCase) for parity with the other SDKs.
+function DigimonTcgSDK:Search(data)
   local EntityMod = require("entity.search_entity")
   if data == nil then
     if self._search == nil then
@@ -272,12 +268,6 @@ function DigimonTcgSDK:search(data)
     end
     return self._search
   end
-  return EntityMod.new(self, data)
-end
-
--- Deprecated: use client:search() instead.
-function DigimonTcgSDK:Search(data)
-  local EntityMod = require("entity.search_entity")
   return EntityMod.new(self, data)
 end
 

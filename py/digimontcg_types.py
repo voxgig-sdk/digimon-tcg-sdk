@@ -4,97 +4,97 @@
 # params (op.<name>.points[].args.params[]). Field/param types come from the
 # canonical type sentinels via @voxgig/sdkgen canonToType (source of truth:
 # @voxgig/apidef VALID_CANON). Do not edit by hand.
+#
+# These are TypedDicts, not dataclasses: the SDK ops return/accept plain dicts
+# at runtime, and a TypedDict IS a dict shape, so the types match the runtime.
+# Optional (req:false) keys are modelled as TypedDict key-optionality
+# (total=False), split into a required base + total=False subclass when a type
+# has both required and optional keys.
 
 from __future__ import annotations
 
-from dataclasses import dataclass
-from typing import Optional, Any
+from typing import TypedDict, Any
 
 
-@dataclass
-class GetAllCard:
-    attribute: Optional[str] = None
-    cardnumber: Optional[str] = None
-    cardset: Optional[str] = None
-    color: Optional[str] = None
-    digivolve1cost: Optional[int] = None
-    digivolve1level: Optional[str] = None
-    digivolve2cost: Optional[int] = None
-    digivolve2level: Optional[str] = None
-    dp: Optional[int] = None
-    dpcost: Optional[int] = None
-    effect: Optional[str] = None
-    image_url: Optional[str] = None
-    level: Optional[int] = None
-    name: Optional[str] = None
-    playcost: Optional[int] = None
-    rarity: Optional[str] = None
-    stage: Optional[str] = None
-    type: Optional[str] = None
+class GetAllCard(TypedDict, total=False):
+    attribute: str
+    cardnumber: str
+    cardset: str
+    color: str
+    digivolve1cost: int
+    digivolve1level: str
+    digivolve2cost: int
+    digivolve2level: str
+    dp: int
+    dpcost: int
+    effect: str
+    image_url: str
+    level: int
+    name: str
+    playcost: int
+    rarity: str
+    stage: str
+    type: str
 
 
-@dataclass
-class GetAllCardListMatch:
-    attribute: Optional[str] = None
-    cardnumber: Optional[str] = None
-    cardset: Optional[str] = None
-    color: Optional[str] = None
-    digivolve1cost: Optional[int] = None
-    digivolve1level: Optional[str] = None
-    digivolve2cost: Optional[int] = None
-    digivolve2level: Optional[str] = None
-    dp: Optional[int] = None
-    dpcost: Optional[int] = None
-    effect: Optional[str] = None
-    image_url: Optional[str] = None
-    level: Optional[int] = None
-    name: Optional[str] = None
-    playcost: Optional[int] = None
-    rarity: Optional[str] = None
-    stage: Optional[str] = None
-    type: Optional[str] = None
+class GetAllCardListMatch(TypedDict, total=False):
+    attribute: str
+    cardnumber: str
+    cardset: str
+    color: str
+    digivolve1cost: int
+    digivolve1level: str
+    digivolve2cost: int
+    digivolve2level: str
+    dp: int
+    dpcost: int
+    effect: str
+    image_url: str
+    level: int
+    name: str
+    playcost: int
+    rarity: str
+    stage: str
+    type: str
 
 
-@dataclass
-class Search:
-    attribute: Optional[str] = None
-    cardnumber: Optional[str] = None
-    cardset: Optional[str] = None
-    color: Optional[str] = None
-    digivolve1cost: Optional[int] = None
-    digivolve1level: Optional[str] = None
-    digivolve2cost: Optional[int] = None
-    digivolve2level: Optional[str] = None
-    dp: Optional[int] = None
-    dpcost: Optional[int] = None
-    effect: Optional[str] = None
-    image_url: Optional[str] = None
-    level: Optional[int] = None
-    name: Optional[str] = None
-    playcost: Optional[int] = None
-    rarity: Optional[str] = None
-    stage: Optional[str] = None
-    type: Optional[str] = None
+class Search(TypedDict, total=False):
+    attribute: str
+    cardnumber: str
+    cardset: str
+    color: str
+    digivolve1cost: int
+    digivolve1level: str
+    digivolve2cost: int
+    digivolve2level: str
+    dp: int
+    dpcost: int
+    effect: str
+    image_url: str
+    level: int
+    name: str
+    playcost: int
+    rarity: str
+    stage: str
+    type: str
 
 
-@dataclass
-class SearchListMatch:
-    attribute: Optional[str] = None
-    cardnumber: Optional[str] = None
-    cardset: Optional[str] = None
-    color: Optional[str] = None
-    digivolve1cost: Optional[int] = None
-    digivolve1level: Optional[str] = None
-    digivolve2cost: Optional[int] = None
-    digivolve2level: Optional[str] = None
-    dp: Optional[int] = None
-    dpcost: Optional[int] = None
-    effect: Optional[str] = None
-    image_url: Optional[str] = None
-    level: Optional[int] = None
-    name: Optional[str] = None
-    playcost: Optional[int] = None
-    rarity: Optional[str] = None
-    stage: Optional[str] = None
-    type: Optional[str] = None
-
+class SearchListMatch(TypedDict, total=False):
+    attribute: str
+    cardnumber: str
+    cardset: str
+    color: str
+    digivolve1cost: int
+    digivolve1level: str
+    digivolve2cost: int
+    digivolve2level: str
+    dp: int
+    dpcost: int
+    effect: str
+    image_url: str
+    level: int
+    name: str
+    playcost: int
+    rarity: str
+    stage: str
+    type: str

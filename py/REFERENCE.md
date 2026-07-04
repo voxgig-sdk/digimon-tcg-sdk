@@ -84,7 +84,7 @@ Prepare a fetch definition without sending. Returns the `fetchdef` and raises on
 ## GetAllCardEntity
 
 ```python
-get_all_card = client.get_all_card
+get_all_card = client.GetAllCard()
 ```
 
 ### Fields
@@ -117,7 +117,9 @@ get_all_card = client.get_all_card
 List entities matching the given criteria. Returns a list and raises on error.
 
 ```python
-results = client.get_all_card.list({})
+results = client.GetAllCard().list({})
+for get_all_card in results:
+    print(get_all_card)
 ```
 
 ### Common Methods
@@ -152,7 +154,7 @@ Return the entity name.
 ## SearchEntity
 
 ```python
-search = client.search
+search = client.Search()
 ```
 
 ### Fields
@@ -185,7 +187,9 @@ search = client.search
 List entities matching the given criteria. Returns a list and raises on error.
 
 ```python
-results = client.search.list({})
+results = client.Search().list({})
+for search in results:
+    print(search)
 ```
 
 ### Common Methods

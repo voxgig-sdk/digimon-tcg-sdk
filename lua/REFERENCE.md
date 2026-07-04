@@ -87,7 +87,7 @@ same parameters as `direct()`.
 ## GetAllCardEntity
 
 ```lua
-local get_all_card = client:get_all_card(nil)
+local get_all_card = client:GetAllCard(nil)
 ```
 
 ### Fields
@@ -120,7 +120,7 @@ local get_all_card = client:get_all_card(nil)
 List entities matching the given criteria. Returns an array.
 
 ```lua
-local results, err = client:get_all_card():list()
+local results, err = client:GetAllCard():list()
 ```
 
 ### Common Methods
@@ -156,7 +156,7 @@ Return the entity name.
 ## SearchEntity
 
 ```lua
-local search = client:search(nil)
+local search = client:Search(nil)
 ```
 
 ### Fields
@@ -189,7 +189,7 @@ local search = client:search(nil)
 List entities matching the given criteria. Returns an array.
 
 ```lua
-local results, err = client:search():list()
+local results, err = client:Search():list()
 ```
 
 ### Common Methods

@@ -29,18 +29,16 @@ require_once 'digimontcg_sdk.php';
 $client = new DigimonTcgSDK();
 ```
 
-### 2. List getallcards
+### 2. List getallcard records
 
 ```php
 try {
-    $result = $client->getallcard()->list();
-    if (is_array($result)) {
-        foreach ($result as $item) {
-            $d = $item->data_get();
-            echo $d["id"] . " " . $d["name"] . "\n";
-        }
+    // list() returns an array of GetAllCard records — iterate directly.
+    $getallcards = $client->GetAllCard()->list();
+    foreach ($getallcards as $item) {
+        echo $item["id"] . " " . $item["name"] . "\n";
     }
-} catch (\Exception $err) {
+} catch (\Throwable $err) {
     echo "Error: " . $err->getMessage();
 }
 ```
@@ -86,13 +84,17 @@ print_r($fetchdef["headers"]);
 
 ### Use test mode
 
-Create a mock client for unit testing — no server required:
+Create a mock client for unit testing — no server required. Seed fixture
+data via the `entity` option so offline calls resolve without a live server:
 
 ```php
-$client = DigimonTcgSDK::test();
+$client = DigimonTcgSDK::test([
+    "entity" => ["getallcard" => ["test01" => ["id" => "test01"]]],
+]);
 
-$result = $client->getallcard()->load(["id" => "test01"]);
-// $result contains mock response data
+// load() returns the bare mock record (throws on error).
+$getallcard = $client->GetAllCard()->load(["id" => "test01"]);
+print_r($getallcard);
 ```
 
 ### Use a custom fetch function
@@ -273,7 +275,7 @@ API path: `/search.php`
 
 ### GetAllCard
 
-Create an instance: `const get_all_card = client.get_all_card`
+Create an instance: `$get_all_card = $client->GetAllCard();`
 
 #### Operations
 
@@ -306,14 +308,15 @@ Create an instance: `const get_all_card = client.get_all_card`
 
 #### Example: List
 
-```ts
-const get_all_cards = await client.get_all_card.list()
+```php
+// list() returns an array of GetAllCard records (throws on error).
+$get_all_cards = $client->GetAllCard()->list();
 ```
 
 
 ### Search
 
-Create an instance: `const search = client.search`
+Create an instance: `$search = $client->Search();`
 
 #### Operations
 
@@ -346,8 +349,9 @@ Create an instance: `const search = client.search`
 
 #### Example: List
 
-```ts
-const searchs = await client.search.list()
+```php
+// list() returns an array of Search records (throws on error).
+$searchs = $client->Search()->list();
 ```
 
 
@@ -422,7 +426,7 @@ Entity instances are stateful. After a successful `load`, the entity
 stores the returned data and match criteria internally.
 
 ```php
-$getallcard = $client->getallcard();
+$getallcard = $client->GetAllCard();
 $getallcard->load(["id" => "example_id"]);
 
 // $getallcard->dataGet() now returns the loaded getallcard data
