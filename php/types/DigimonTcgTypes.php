@@ -35,7 +35,7 @@ class GetAllCard
     public ?string $type = null;
 }
 
-/** Match filter for GetAllCard#list (any subset of GetAllCard fields). */
+/** Request payload for GetAllCard#list. */
 class GetAllCardListMatch
 {
     public ?string $attribute = null;
@@ -81,7 +81,7 @@ class Search
     public ?string $type = null;
 }
 
-/** Match filter for Search#list (any subset of Search fields). */
+/** Request payload for Search#list. */
 class SearchListMatch
 {
     public ?string $attribute = null;

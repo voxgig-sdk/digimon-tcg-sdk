@@ -128,24 +128,24 @@ const get_all_card = client.GetAllCard()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `attribute` | ``$STRING`` | No |  |
-| `cardnumber` | ``$STRING`` | No |  |
-| `cardset` | ``$STRING`` | No |  |
-| `color` | ``$STRING`` | No |  |
-| `digivolve1cost` | ``$INTEGER`` | No |  |
-| `digivolve1level` | ``$STRING`` | No |  |
-| `digivolve2cost` | ``$INTEGER`` | No |  |
-| `digivolve2level` | ``$STRING`` | No |  |
-| `dp` | ``$INTEGER`` | No |  |
-| `dpcost` | ``$INTEGER`` | No |  |
-| `effect` | ``$STRING`` | No |  |
-| `image_url` | ``$STRING`` | No |  |
-| `level` | ``$INTEGER`` | No |  |
-| `name` | ``$STRING`` | No |  |
-| `playcost` | ``$INTEGER`` | No |  |
-| `rarity` | ``$STRING`` | No |  |
-| `stage` | ``$STRING`` | No |  |
-| `type` | ``$STRING`` | No |  |
+| `attribute` | `string` | No |  |
+| `cardnumber` | `string` | No |  |
+| `cardset` | `string` | No |  |
+| `color` | `string` | No |  |
+| `digivolve1cost` | `number` | No |  |
+| `digivolve1level` | `string` | No |  |
+| `digivolve2cost` | `number` | No |  |
+| `digivolve2level` | `string` | No |  |
+| `dp` | `number` | No |  |
+| `dpcost` | `number` | No |  |
+| `effect` | `string` | No |  |
+| `image_url` | `string` | No |  |
+| `level` | `number` | No |  |
+| `name` | `string` | No |  |
+| `playcost` | `number` | No |  |
+| `rarity` | `string` | No |  |
+| `stage` | `string` | No |  |
+| `type` | `string` | No |  |
 
 ### Operations
 
@@ -195,24 +195,24 @@ const search = client.Search()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `attribute` | ``$STRING`` | No |  |
-| `cardnumber` | ``$STRING`` | No |  |
-| `cardset` | ``$STRING`` | No |  |
-| `color` | ``$STRING`` | No |  |
-| `digivolve1cost` | ``$INTEGER`` | No |  |
-| `digivolve1level` | ``$STRING`` | No |  |
-| `digivolve2cost` | ``$INTEGER`` | No |  |
-| `digivolve2level` | ``$STRING`` | No |  |
-| `dp` | ``$INTEGER`` | No |  |
-| `dpcost` | ``$INTEGER`` | No |  |
-| `effect` | ``$STRING`` | No |  |
-| `image_url` | ``$STRING`` | No |  |
-| `level` | ``$INTEGER`` | No |  |
-| `name` | ``$STRING`` | No |  |
-| `playcost` | ``$INTEGER`` | No |  |
-| `rarity` | ``$STRING`` | No |  |
-| `stage` | ``$STRING`` | No |  |
-| `type` | ``$STRING`` | No |  |
+| `attribute` | `string` | No |  |
+| `cardnumber` | `string` | No |  |
+| `cardset` | `string` | No |  |
+| `color` | `string` | No |  |
+| `digivolve1cost` | `number` | No |  |
+| `digivolve1level` | `string` | No |  |
+| `digivolve2cost` | `number` | No |  |
+| `digivolve2level` | `string` | No |  |
+| `dp` | `number` | No |  |
+| `dpcost` | `number` | No |  |
+| `effect` | `string` | No |  |
+| `image_url` | `string` | No |  |
+| `level` | `number` | No |  |
+| `name` | `string` | No |  |
+| `playcost` | `number` | No |  |
+| `rarity` | `string` | No |  |
+| `stage` | `string` | No |  |
+| `type` | `string` | No |  |
 
 ### Operations
 

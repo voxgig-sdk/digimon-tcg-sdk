@@ -26,7 +26,26 @@ export interface GetAllCard {
   type?: string
 }
 
-export type GetAllCardListMatch = Partial<GetAllCard>
+export interface GetAllCardListMatch {
+  attribute?: string
+  cardnumber?: string
+  cardset?: string
+  color?: string
+  digivolve1cost?: number
+  digivolve1level?: string
+  digivolve2cost?: number
+  digivolve2level?: string
+  dp?: number
+  dpcost?: number
+  effect?: string
+  image_url?: string
+  level?: number
+  name?: string
+  playcost?: number
+  rarity?: string
+  stage?: string
+  type?: string
+}
 
 export interface Search {
   attribute?: string
@@ -49,5 +68,24 @@ export interface Search {
   type?: string
 }
 
-export type SearchListMatch = Partial<Search>
+export interface SearchListMatch {
+  attribute?: string
+  cardnumber?: string
+  cardset?: string
+  color?: string
+  digivolve1cost?: number
+  digivolve1level?: string
+  digivolve2cost?: number
+  digivolve2level?: string
+  dp?: number
+  dpcost?: number
+  effect?: string
+  image_url?: string
+  level?: number
+  name?: string
+  playcost?: number
+  rarity?: string
+  stage?: string
+  type?: string
+}
 

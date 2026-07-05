@@ -8,7 +8,7 @@ Complete API reference for the DigimonTcg Ruby SDK.
 ### Constructor
 
 ```ruby
-require_relative 'digimon-tcg_sdk'
+require_relative 'DigimonTcg_sdk'
 
 client = DigimonTcgSDK.new(options)
 ```
@@ -97,33 +97,33 @@ get_all_card = client.GetAllCard
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `attribute` | ``$STRING`` | No |  |
-| `cardnumber` | ``$STRING`` | No |  |
-| `cardset` | ``$STRING`` | No |  |
-| `color` | ``$STRING`` | No |  |
-| `digivolve1cost` | ``$INTEGER`` | No |  |
-| `digivolve1level` | ``$STRING`` | No |  |
-| `digivolve2cost` | ``$INTEGER`` | No |  |
-| `digivolve2level` | ``$STRING`` | No |  |
-| `dp` | ``$INTEGER`` | No |  |
-| `dpcost` | ``$INTEGER`` | No |  |
-| `effect` | ``$STRING`` | No |  |
-| `image_url` | ``$STRING`` | No |  |
-| `level` | ``$INTEGER`` | No |  |
-| `name` | ``$STRING`` | No |  |
-| `playcost` | ``$INTEGER`` | No |  |
-| `rarity` | ``$STRING`` | No |  |
-| `stage` | ``$STRING`` | No |  |
-| `type` | ``$STRING`` | No |  |
+| `attribute` | `String` | No |  |
+| `cardnumber` | `String` | No |  |
+| `cardset` | `String` | No |  |
+| `color` | `String` | No |  |
+| `digivolve1cost` | `Integer` | No |  |
+| `digivolve1level` | `String` | No |  |
+| `digivolve2cost` | `Integer` | No |  |
+| `digivolve2level` | `String` | No |  |
+| `dp` | `Integer` | No |  |
+| `dpcost` | `Integer` | No |  |
+| `effect` | `String` | No |  |
+| `image_url` | `String` | No |  |
+| `level` | `Integer` | No |  |
+| `name` | `String` | No |  |
+| `playcost` | `Integer` | No |  |
+| `rarity` | `String` | No |  |
+| `stage` | `String` | No |  |
+| `type` | `String` | No |  |
 
 ### Operations
 
-#### `list(reqmatch, ctrl = nil) -> Array`
+#### `list(reqmatch = nil, ctrl = nil) -> Array`
 
-List entities matching the given criteria. Returns an array. Raises on error.
+List entities matching the given criteria (call with no argument to list all). Returns an array. Raises on error.
 
 ```ruby
-results = client.GetAllCard.list(nil)
+results = client.GetAllCard.list
 ```
 
 ### Common Methods
@@ -166,33 +166,33 @@ search = client.Search
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `attribute` | ``$STRING`` | No |  |
-| `cardnumber` | ``$STRING`` | No |  |
-| `cardset` | ``$STRING`` | No |  |
-| `color` | ``$STRING`` | No |  |
-| `digivolve1cost` | ``$INTEGER`` | No |  |
-| `digivolve1level` | ``$STRING`` | No |  |
-| `digivolve2cost` | ``$INTEGER`` | No |  |
-| `digivolve2level` | ``$STRING`` | No |  |
-| `dp` | ``$INTEGER`` | No |  |
-| `dpcost` | ``$INTEGER`` | No |  |
-| `effect` | ``$STRING`` | No |  |
-| `image_url` | ``$STRING`` | No |  |
-| `level` | ``$INTEGER`` | No |  |
-| `name` | ``$STRING`` | No |  |
-| `playcost` | ``$INTEGER`` | No |  |
-| `rarity` | ``$STRING`` | No |  |
-| `stage` | ``$STRING`` | No |  |
-| `type` | ``$STRING`` | No |  |
+| `attribute` | `String` | No |  |
+| `cardnumber` | `String` | No |  |
+| `cardset` | `String` | No |  |
+| `color` | `String` | No |  |
+| `digivolve1cost` | `Integer` | No |  |
+| `digivolve1level` | `String` | No |  |
+| `digivolve2cost` | `Integer` | No |  |
+| `digivolve2level` | `String` | No |  |
+| `dp` | `Integer` | No |  |
+| `dpcost` | `Integer` | No |  |
+| `effect` | `String` | No |  |
+| `image_url` | `String` | No |  |
+| `level` | `Integer` | No |  |
+| `name` | `String` | No |  |
+| `playcost` | `Integer` | No |  |
+| `rarity` | `String` | No |  |
+| `stage` | `String` | No |  |
+| `type` | `String` | No |  |
 
 ### Operations
 
-#### `list(reqmatch, ctrl = nil) -> Array`
+#### `list(reqmatch = nil, ctrl = nil) -> Array`
 
-List entities matching the given criteria. Returns an array. Raises on error.
+List entities matching the given criteria (call with no argument to list all). Returns an array. Raises on error.
 
 ```ruby
-results = client.Search.list(nil)
+results = client.Search.list
 ```
 
 ### Common Methods

@@ -27,6 +27,24 @@
 ---@field type? string
 
 ---@class GetAllCardListMatch
+---@field attribute? string
+---@field cardnumber? string
+---@field cardset? string
+---@field color? string
+---@field digivolve1cost? number
+---@field digivolve1level? string
+---@field digivolve2cost? number
+---@field digivolve2level? string
+---@field dp? number
+---@field dpcost? number
+---@field effect? string
+---@field image_url? string
+---@field level? number
+---@field name? string
+---@field playcost? number
+---@field rarity? string
+---@field stage? string
+---@field type? string
 
 ---@class Search
 ---@field attribute? string
@@ -49,6 +67,24 @@
 ---@field type? string
 
 ---@class SearchListMatch
+---@field attribute? string
+---@field cardnumber? string
+---@field cardset? string
+---@field color? string
+---@field digivolve1cost? number
+---@field digivolve1level? string
+---@field digivolve2cost? number
+---@field digivolve2level? string
+---@field dp? number
+---@field dpcost? number
+---@field effect? string
+---@field image_url? string
+---@field level? number
+---@field name? string
+---@field playcost? number
+---@field rarity? string
+---@field stage? string
+---@field type? string
 
 local M = {}
 

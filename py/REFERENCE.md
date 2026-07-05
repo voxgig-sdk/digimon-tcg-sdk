@@ -8,7 +8,7 @@ Complete API reference for the DigimonTcg Python SDK.
 ### Constructor
 
 ```python
-from digimon-tcg_sdk import DigimonTcgSDK
+from digimontcg_sdk import DigimonTcgSDK
 
 client = DigimonTcgSDK(options)
 ```
@@ -91,33 +91,33 @@ get_all_card = client.GetAllCard()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `attribute` | ``$STRING`` | No |  |
-| `cardnumber` | ``$STRING`` | No |  |
-| `cardset` | ``$STRING`` | No |  |
-| `color` | ``$STRING`` | No |  |
-| `digivolve1cost` | ``$INTEGER`` | No |  |
-| `digivolve1level` | ``$STRING`` | No |  |
-| `digivolve2cost` | ``$INTEGER`` | No |  |
-| `digivolve2level` | ``$STRING`` | No |  |
-| `dp` | ``$INTEGER`` | No |  |
-| `dpcost` | ``$INTEGER`` | No |  |
-| `effect` | ``$STRING`` | No |  |
-| `image_url` | ``$STRING`` | No |  |
-| `level` | ``$INTEGER`` | No |  |
-| `name` | ``$STRING`` | No |  |
-| `playcost` | ``$INTEGER`` | No |  |
-| `rarity` | ``$STRING`` | No |  |
-| `stage` | ``$STRING`` | No |  |
-| `type` | ``$STRING`` | No |  |
+| `attribute` | `str` | No |  |
+| `cardnumber` | `str` | No |  |
+| `cardset` | `str` | No |  |
+| `color` | `str` | No |  |
+| `digivolve1cost` | `int` | No |  |
+| `digivolve1level` | `str` | No |  |
+| `digivolve2cost` | `int` | No |  |
+| `digivolve2level` | `str` | No |  |
+| `dp` | `int` | No |  |
+| `dpcost` | `int` | No |  |
+| `effect` | `str` | No |  |
+| `image_url` | `str` | No |  |
+| `level` | `int` | No |  |
+| `name` | `str` | No |  |
+| `playcost` | `int` | No |  |
+| `rarity` | `str` | No |  |
+| `stage` | `str` | No |  |
+| `type` | `str` | No |  |
 
 ### Operations
 
-#### `list(reqmatch, ctrl=None) -> list`
+#### `list(reqmatch=None, ctrl=None) -> list`
 
-List entities matching the given criteria. Returns a list and raises on error.
+List entities matching the given criteria. The match is optional — call `list()` with no argument to list all records. Returns a list and raises on error.
 
 ```python
-results = client.GetAllCard().list({})
+results = client.GetAllCard().list()
 for get_all_card in results:
     print(get_all_card)
 ```
@@ -161,33 +161,33 @@ search = client.Search()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `attribute` | ``$STRING`` | No |  |
-| `cardnumber` | ``$STRING`` | No |  |
-| `cardset` | ``$STRING`` | No |  |
-| `color` | ``$STRING`` | No |  |
-| `digivolve1cost` | ``$INTEGER`` | No |  |
-| `digivolve1level` | ``$STRING`` | No |  |
-| `digivolve2cost` | ``$INTEGER`` | No |  |
-| `digivolve2level` | ``$STRING`` | No |  |
-| `dp` | ``$INTEGER`` | No |  |
-| `dpcost` | ``$INTEGER`` | No |  |
-| `effect` | ``$STRING`` | No |  |
-| `image_url` | ``$STRING`` | No |  |
-| `level` | ``$INTEGER`` | No |  |
-| `name` | ``$STRING`` | No |  |
-| `playcost` | ``$INTEGER`` | No |  |
-| `rarity` | ``$STRING`` | No |  |
-| `stage` | ``$STRING`` | No |  |
-| `type` | ``$STRING`` | No |  |
+| `attribute` | `str` | No |  |
+| `cardnumber` | `str` | No |  |
+| `cardset` | `str` | No |  |
+| `color` | `str` | No |  |
+| `digivolve1cost` | `int` | No |  |
+| `digivolve1level` | `str` | No |  |
+| `digivolve2cost` | `int` | No |  |
+| `digivolve2level` | `str` | No |  |
+| `dp` | `int` | No |  |
+| `dpcost` | `int` | No |  |
+| `effect` | `str` | No |  |
+| `image_url` | `str` | No |  |
+| `level` | `int` | No |  |
+| `name` | `str` | No |  |
+| `playcost` | `int` | No |  |
+| `rarity` | `str` | No |  |
+| `stage` | `str` | No |  |
+| `type` | `str` | No |  |
 
 ### Operations
 
-#### `list(reqmatch, ctrl=None) -> list`
+#### `list(reqmatch=None, ctrl=None) -> list`
 
-List entities matching the given criteria. Returns a list and raises on error.
+List entities matching the given criteria. The match is optional — call `list()` with no argument to list all records. Returns a list and raises on error.
 
 ```python
-results = client.Search().list({})
+results = client.Search().list()
 for search in results:
     print(search)
 ```

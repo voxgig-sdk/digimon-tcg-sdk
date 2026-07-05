@@ -221,13 +221,13 @@ class DigimonTcgSDK:
 
 
     def GetAllCard(self, data=None) -> "GetAllCardEntity":
-        """Entity factory: client.GetAllCard().list({}) / client.GetAllCard().load({"id": ...})."""
+        """Entity factory: client.GetAllCard().list() / client.GetAllCard().load({"id": ...})."""
         from entity.get_all_card_entity import GetAllCardEntity
         return GetAllCardEntity(self, data)
 
 
     def Search(self, data=None) -> "SearchEntity":
-        """Entity factory: client.Search().list({}) / client.Search().load({"id": ...})."""
+        """Entity factory: client.Search().list() / client.Search().load({"id": ...})."""
         from entity.search_entity import SearchEntity
         return SearchEntity(self, data)
 

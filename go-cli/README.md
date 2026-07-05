@@ -17,8 +17,6 @@ go build -o digimon-tcg-cli ./...
 ```sh
 # One-shot: arguments form a single AQL expression
 ./digimon-tcg-cli list get_all_card
-./digimon-tcg-cli load 1 get_all_card
-./digimon-tcg-cli load '{id:1}' get_all_card
 
 # REPL
 ./digimon-tcg-cli
@@ -29,8 +27,6 @@ go build -o digimon-tcg-cli ./...
 | Word     | Signatures                                   | Description                |
 |----------|----------------------------------------------|----------------------------|
 | `list`   | `[entity]` · `[query entity]`                | List records               |
-| `load`   | `[entity]` · `[query entity]`                | Load a single record       |
-| `update` | `[entity]` · `[query entity]`                | Update a record            |
 
 `query` is either a Map (`{id:1}`) or a Scalar (`1`, treated as `{id:1}`).
 `entity` is one of the SDK's entity names (auto-quoted as an atom).

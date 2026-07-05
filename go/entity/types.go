@@ -30,8 +30,7 @@ type GetAllCard struct {
 	Type *string `json:"type,omitempty"`
 }
 
-// GetAllCardListMatch mirrors the get_all_card fields as an all-optional match
-// filter (Go analog of Partial<GetAllCard>).
+// GetAllCardListMatch is the typed request payload for GetAllCard.ListTyped.
 type GetAllCardListMatch struct {
 	Attribute *string `json:"attribute,omitempty"`
 	Cardnumber *string `json:"cardnumber,omitempty"`
@@ -75,8 +74,7 @@ type Search struct {
 	Type *string `json:"type,omitempty"`
 }
 
-// SearchListMatch mirrors the search fields as an all-optional match
-// filter (Go analog of Partial<Search>).
+// SearchListMatch is the typed request payload for Search.ListTyped.
 type SearchListMatch struct {
 	Attribute *string `json:"attribute,omitempty"`
 	Cardnumber *string `json:"cardnumber,omitempty"`

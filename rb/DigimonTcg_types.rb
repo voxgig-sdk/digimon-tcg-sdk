@@ -85,7 +85,7 @@ GetAllCard = Struct.new(
   keyword_init: true
 )
 
-# Match filter for GetAllCard#list (any subset of GetAllCard fields).
+# Request payload for GetAllCard#list.
 #
 # @!attribute [rw] attribute
 #   @return [String, nil]
@@ -239,7 +239,7 @@ Search = Struct.new(
   keyword_init: true
 )
 
-# Match filter for Search#list (any subset of Search fields).
+# Request payload for Search#list.
 #
 # @!attribute [rw] attribute
 #   @return [String, nil]
