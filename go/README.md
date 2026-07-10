@@ -50,12 +50,12 @@ import (
 func main() {
     client := sdk.New()
 
-    // List getallcard records — the value is the array of records itself.
-    getallcards, err := client.GetAllCard(nil).List(nil, nil)
+    // List getAllCard records — the value is the array of records itself.
+    getAllCards, err := client.GetAllCard(nil).List(nil, nil)
     if err != nil {
         panic(err)
     }
-    for _, item := range getallcards.([]any) {
+    for _, item := range getAllCards.([]any) {
         fmt.Println(item)
     }
 }
@@ -137,13 +137,13 @@ Create a mock client for unit testing — no server required:
 ```go
 client := sdk.Test()
 
-getallcard, err := client.GetAllCard(nil).List(
+getAllCard, err := client.GetAllCard(nil).List(
     nil, nil,
 )
 if err != nil {
     panic(err)
 }
-fmt.Println(getallcard) // the returned mock data
+fmt.Println(getAllCard) // the returned mock data
 ```
 
 ### Use a custom fetch function
@@ -248,9 +248,9 @@ Check `err` first, then use the value directly (or the typed
 `...Typed` variants, which return the entity's model struct and a typed
 slice):
 
-    getallcard, err := client.GetAllCard(nil).List(map[string]any{/* fields */}, nil)
+    getAllCard, err := client.GetAllCard(nil).List(map[string]any{/* fields */}, nil)
     if err != nil { /* handle */ }
-    // getallcard is the returned record
+    // getAllCard is the returned record
 
 Only `Direct()` returns a response envelope — a `map[string]any` with
 `"ok"`, `"status"`, `"headers"`, and `"data"` keys.
@@ -318,7 +318,7 @@ API path: `/search.php`
 
 ### GetAllCard
 
-Create an instance: `get_all_card := client.GetAllCard(nil)`
+Create an instance: `getAllCard := client.GetAllCard(nil)`
 
 #### Operations
 
@@ -352,11 +352,11 @@ Create an instance: `get_all_card := client.GetAllCard(nil)`
 #### Example: List
 
 ```go
-get_all_cards, err := client.GetAllCard(nil).List(nil, nil)
+getAllCards, err := client.GetAllCard(nil).List(nil, nil)
 if err != nil {
     panic(err)
 }
-fmt.Println(get_all_cards) // the array of records
+fmt.Println(getAllCards) // the array of records
 ```
 
 

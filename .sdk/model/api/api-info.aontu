@@ -16,9 +16,9 @@ main: {
           url: "https://digimoncard.io/api-public"
         }
       ]
+      summary: "This API allows you to retrieve information for Digimon Cards from the Digimon TCG."
       title: "Digimon TCG API"
       version: "1.0.0"
+      website: "https://digimoncard.io"
     }
   }
-}
-

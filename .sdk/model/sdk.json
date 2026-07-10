@@ -6,9 +6,6 @@
     },
     "kit": {
       "config": {
-        "auth": {
-          "prefix": "Bearer"
-        },
         "docs_order": [
           "ts",
           "py",
@@ -599,14 +596,17 @@
           "url": "https://documenter.getpostman.com/view/14059948/TzecB4fH"
         },
         "description": "This API allows you to retrieve information for Digimon Cards from the Digimon TCG. Requests are rate limited to 15 requests per 10 seconds to prevent abuse, and violating this limit can result in being temporarily blocked from accessing the API.",
+        "meta_source": "https://www.freepublicapis.com",
         "servers": [
           {
             "description": "Production server",
             "url": "https://digimoncard.io/api-public"
           }
         ],
+        "summary": "This API allows you to retrieve information for Digimon Cards from the Digimon TCG.",
         "title": "Digimon TCG API",
-        "version": "1.0.0"
+        "version": "1.0.0",
+        "website": "https://digimoncard.io"
       },
       "option": {},
       "target": {
@@ -659,6 +659,9 @@
           },
           "name": "go-cli",
           "phase": {
+            "agentguide": {
+              "active": false
+            },
             "entity": {
               "active": false
             },
@@ -709,6 +712,9 @@
           },
           "name": "go-mcp",
           "phase": {
+            "agentguide": {
+              "active": false
+            },
             "entity": {
               "active": false
             },
