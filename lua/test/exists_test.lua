@@ -1,4 +1,4 @@
--- ProjectName SDK exists test
+-- DigimonTcg SDK exists test
 
 local sdk = require("digimon-tcg_sdk")
 
