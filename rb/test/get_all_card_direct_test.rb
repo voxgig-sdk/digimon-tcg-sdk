@@ -60,11 +60,11 @@ def get_all_card_direct_setup(mockres)
   calls = []
 
   env = Runner.env_override({
-    "DIGIMONTCG_TEST_GET_ALL_CARD_ENTID" => {},
-    "DIGIMONTCG_TEST_LIVE" => "FALSE",
+    "DIGIMON_TCG_TEST_GET_ALL_CARD_ENTID" => {},
+    "DIGIMON_TCG_TEST_LIVE" => "FALSE",
   })
 
-  live = env["DIGIMONTCG_TEST_LIVE"] == "TRUE"
+  live = env["DIGIMON_TCG_TEST_LIVE"] == "TRUE"
 
   if live
     merged_opts = {

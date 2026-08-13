@@ -219,9 +219,9 @@ data **directly** — there is no wrapper:
 
 Check `err` first (it is non-`nil` on failure), then use `value`:
 
-    local get_all_card, err = client:GetAllCard():load()
+    local get_all_card, err = client:GetAllCard():list()
     if err then error(err) end
-    -- get_all_card is the loaded record
+    -- get_all_card is the record list
 
 Only `direct()` returns a response envelope — a `table` with `ok`,
 `status`, `headers`, and `data` keys.

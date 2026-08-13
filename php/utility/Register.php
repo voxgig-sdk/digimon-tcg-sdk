@@ -23,6 +23,7 @@ require_once __DIR__ . '/MakeUrl.php';
 require_once __DIR__ . '/Param.php';
 require_once __DIR__ . '/PrepareAuth.php';
 require_once __DIR__ . '/PrepareBody.php';
+require_once __DIR__ . '/Graphql.php';
 require_once __DIR__ . '/PrepareHeaders.php';
 require_once __DIR__ . '/PrepareMethod.php';
 require_once __DIR__ . '/PrepareParams.php';
@@ -59,6 +60,8 @@ DigimonTcgUtility::setRegistrar(function (DigimonTcgUtility $u): void {
     $u->prepare_params = [DigimonTcgPrepareParams::class, 'call'];
     $u->prepare_path = [DigimonTcgPreparePath::class, 'call'];
     $u->prepare_query = [DigimonTcgPrepareQuery::class, 'call'];
+    $u->graphql_body = [DigimonTcgGraphql::class, 'body'];
+    $u->graphql_errors = [DigimonTcgGraphql::class, 'errors'];
     $u->result_basic = [DigimonTcgResultBasic::class, 'call'];
     $u->result_body = [DigimonTcgResultBody::class, 'call'];
     $u->result_headers = [DigimonTcgResultHeaders::class, 'call'];

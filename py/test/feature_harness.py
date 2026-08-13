@@ -14,12 +14,12 @@ from __future__ import annotations
 
 from urllib.parse import quote
 
-from config import make_config
-from features import _make_feature
-from core.control import DigimonTcgControl
-from core.error import DigimonTcgError
-from core.result import DigimonTcgResult
-from core.spec import DigimonTcgSpec
+from digimontcg_sdk.config import make_config
+from digimontcg_sdk.features import _make_feature
+from digimontcg_sdk.core.control import DigimonTcgControl
+from digimontcg_sdk.core.error import DigimonTcgError
+from digimontcg_sdk.core.result import DigimonTcgResult
+from digimontcg_sdk.core.spec import DigimonTcgSpec
 
 
 # True when this SDK was generated with the named feature.

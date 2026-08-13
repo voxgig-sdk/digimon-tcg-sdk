@@ -23,8 +23,8 @@ module DigimonTcgTestRunner
   end
 
   def self.env_override(m)
-    live = getenv("DIGIMONTCG_TEST_LIVE")
-    override = getenv("DIGIMONTCG_TEST_OVERRIDE")
+    live = getenv("DIGIMON_TCG_TEST_LIVE")
+    override = getenv("DIGIMON_TCG_TEST_OVERRIDE")
 
     if live == "TRUE" || override == "TRUE"
       m.each_key do |key|
@@ -44,8 +44,8 @@ module DigimonTcgTestRunner
       end
     end
 
-    explain = getenv("DIGIMONTCG_TEST_EXPLAIN")
-    m["DIGIMONTCG_TEST_EXPLAIN"] = explain if explain && !explain.empty?
+    explain = getenv("DIGIMON_TCG_TEST_EXPLAIN")
+    m["DIGIMON_TCG_TEST_EXPLAIN"] = explain if explain && !explain.empty?
 
     m
   end

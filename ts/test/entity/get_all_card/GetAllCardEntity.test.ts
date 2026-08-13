@@ -26,8 +26,8 @@ import {
 describe('GetAllCardEntity', async () => {
 
   // Per-test live pacing. Delay is read from sdk-test-control.json's
-  // `test.live.delayMs`; only sleeps when DIGIMONTCG_TEST_LIVE=TRUE.
-  afterEach(liveDelay('DIGIMONTCG_TEST_LIVE'))
+  // `test.live.delayMs`; only sleeps when DIGIMON_TCG_TEST_LIVE=TRUE.
+  afterEach(liveDelay('DIGIMON_TCG_TEST_LIVE'))
 
   test('instance', async () => {
     const testsdk = DigimonTcgSDK.test()
@@ -63,7 +63,7 @@ describe('GetAllCardEntity', async () => {
     const get_all_card_ref01_ent = client.GetAllCard()
     const get_all_card_ref01_match: any = {}
 
-    const get_all_card_ref01_list = await get_all_card_ref01_ent.list(get_all_card_ref01_match)
+    const get_all_card_ref01_list = (await get_all_card_ref01_ent.list(get_all_card_ref01_match)).map((e: any) => e.data())
 
 
   })

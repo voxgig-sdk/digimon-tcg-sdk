@@ -186,6 +186,7 @@ class DigimonTcgConfig
                       ],
                     ],
                   ],
+                  'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/getAllCards.php',
                   'parts' => [
@@ -448,6 +449,7 @@ class DigimonTcgConfig
                       ],
                     ],
                   ],
+                  'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/search.php',
                   'parts' => [

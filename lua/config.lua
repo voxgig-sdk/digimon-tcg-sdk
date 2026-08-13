@@ -180,6 +180,7 @@ local function make_config()
                     },
                   },
                 },
+                ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/getAllCards.php",
                 ["parts"] = {
@@ -442,6 +443,7 @@ local function make_config()
                     },
                   },
                 },
+                ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/search.php",
                 ["parts"] = {

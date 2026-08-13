@@ -60,11 +60,11 @@ def search_direct_setup(mockres)
   calls = []
 
   env = Runner.env_override({
-    "DIGIMONTCG_TEST_SEARCH_ENTID" => {},
-    "DIGIMONTCG_TEST_LIVE" => "FALSE",
+    "DIGIMON_TCG_TEST_SEARCH_ENTID" => {},
+    "DIGIMON_TCG_TEST_LIVE" => "FALSE",
   })
 
-  live = env["DIGIMONTCG_TEST_LIVE"] == "TRUE"
+  live = env["DIGIMON_TCG_TEST_LIVE"] == "TRUE"
 
   if live
     merged_opts = {

@@ -24,6 +24,7 @@ require_relative 'prepare_method'
 require_relative 'prepare_params'
 require_relative 'prepare_path'
 require_relative 'prepare_query'
+require_relative 'graphql'
 require_relative 'result_basic'
 require_relative 'result_body'
 require_relative 'result_headers'
@@ -55,6 +56,8 @@ DigimonTcgUtility.registrar = ->(u) {
   u.prepare_params = DigimonTcgUtilities::PrepareParams
   u.prepare_path = DigimonTcgUtilities::PreparePath
   u.prepare_query = DigimonTcgUtilities::PrepareQuery
+  u.graphql_body = DigimonTcgUtilities::GraphqlBody
+  u.graphql_errors = DigimonTcgUtilities::GraphqlErrors
   u.result_basic = DigimonTcgUtilities::ResultBasic
   u.result_body = DigimonTcgUtilities::ResultBody
   u.result_headers = DigimonTcgUtilities::ResultHeaders

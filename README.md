@@ -38,9 +38,18 @@ network, and no credentials:
 ### TypeScript
 
 ```ts
-const client = DigimonTcgSDK.test()
+// The offline mock starts EMPTY — seed it with the records the test needs.
+// Shape: { entity: { <entity-name>: { <id>: <record> } } }
+const client = DigimonTcgSDK.test({
+  entity: {
+    get_all_card: {
+      test01: { id: 'test01' },
+    },
+  },
+})
 const getallcards = await client.GetAllCard().list()
-// getallcards is an array of bare GetAllCard records populated with mock data
+// getallcards is an array of GetAllCard entities, populated with mock data
+// — call getallcards[0].data() for the record itself
 console.log(getallcards)
 ```
 
@@ -110,7 +119,7 @@ import { DigimonTcgSDK } from '@voxgig-sdk/digimon-tcg'
 
 const client = new DigimonTcgSDK()
 
-// List all getallcards (returns GetAllCard[])
+// List all getallcards (returns GetAllCardEntity[] — .data() for the record)
 const getallcards = await client.GetAllCard().list()
 for (const getallcard of getallcards) {
   console.log(getallcard)
@@ -344,6 +353,9 @@ Pass custom features via the `extend` option at construction time.
 
 This SDK is generated from the upstream OpenAPI specification. It is an
 unofficial client and is not affiliated with the API provider.
+
+The OpenAPI spec(s) this SDK was generated from are kept in the
+[`.sdk/def/`](.sdk/def/) folder.
 
 - Upstream API: [https://documenter.getpostman.com/view/14059948/TzecB4fH](https://documenter.getpostman.com/view/14059948/TzecB4fH)
 

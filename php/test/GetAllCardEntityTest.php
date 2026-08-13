@@ -72,7 +72,7 @@ class GetAllCardEntityTest extends TestCase
         // The basic flow consumes synthetic IDs from the fixture. In live mode
         // without an *_ENTID env override, those IDs hit the live API and 4xx.
         if (!empty($setup["synthetic_only"])) {
-            $this->markTestSkipped("live entity test uses synthetic IDs from fixture — set DIGIMONTCG_TEST_GET_ALL_CARD_ENTID JSON to run live");
+            $this->markTestSkipped("live entity test uses synthetic IDs from fixture — set DIGIMON_TCG_TEST_GET_ALL_CARD_ENTID JSON to run live");
             return;
         }
         $client = $setup["client"];
@@ -117,22 +117,22 @@ function get_all_card_basic_setup($extra)
     // Detect ENTID env override before envOverride consumes it. When live
     // mode is on without a real override, the basic test runs against synthetic
     // IDs from the fixture and 4xx's. Surface this so the test can skip.
-    $entid_env_raw = getenv("DIGIMONTCG_TEST_GET_ALL_CARD_ENTID");
+    $entid_env_raw = getenv("DIGIMON_TCG_TEST_GET_ALL_CARD_ENTID");
     $idmap_overridden = $entid_env_raw !== false && str_starts_with(trim($entid_env_raw), "{");
 
     $env = Runner::env_override([
-        "DIGIMONTCG_TEST_GET_ALL_CARD_ENTID" => $idmap,
-        "DIGIMONTCG_TEST_LIVE" => "FALSE",
-        "DIGIMONTCG_TEST_EXPLAIN" => "FALSE",
+        "DIGIMON_TCG_TEST_GET_ALL_CARD_ENTID" => $idmap,
+        "DIGIMON_TCG_TEST_LIVE" => "FALSE",
+        "DIGIMON_TCG_TEST_EXPLAIN" => "FALSE",
     ]);
 
     $idmap_resolved = Helpers::to_map(
-        $env["DIGIMONTCG_TEST_GET_ALL_CARD_ENTID"]);
+        $env["DIGIMON_TCG_TEST_GET_ALL_CARD_ENTID"]);
     if ($idmap_resolved === null) {
         $idmap_resolved = Helpers::to_map($idmap);
     }
 
-    if ($env["DIGIMONTCG_TEST_LIVE"] === "TRUE") {
+    if ($env["DIGIMON_TCG_TEST_LIVE"] === "TRUE") {
         $merged_opts = Vs::merge([
             [
             ],
@@ -141,13 +141,13 @@ function get_all_card_basic_setup($extra)
         $client = new DigimonTcgSDK(Helpers::to_map($merged_opts));
     }
 
-    $live = $env["DIGIMONTCG_TEST_LIVE"] === "TRUE";
+    $live = $env["DIGIMON_TCG_TEST_LIVE"] === "TRUE";
     return [
         "client" => $client,
         "data" => $entity_data,
         "idmap" => $idmap_resolved,
         "env" => $env,
-        "explain" => $env["DIGIMONTCG_TEST_EXPLAIN"] === "TRUE",
+        "explain" => $env["DIGIMON_TCG_TEST_EXPLAIN"] === "TRUE",
         "live" => $live,
         "synthetic_only" => $live && !$idmap_overridden,
         "now" => (int)(microtime(true) * 1000),

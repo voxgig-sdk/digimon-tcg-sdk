@@ -16,11 +16,11 @@
 import pytest
 
 from projectname_sdk import DigimonTcgSDK
-from core.error import DigimonTcgError
-from core.result import DigimonTcgResult
-from core.response import DigimonTcgResponse
-from core.spec import DigimonTcgSpec
-from feature.base_feature import DigimonTcgBaseFeature
+from projectname_sdk.core.error import DigimonTcgError
+from projectname_sdk.core.result import DigimonTcgResult
+from projectname_sdk.core.response import DigimonTcgResponse
+from projectname_sdk.core.spec import DigimonTcgSpec
+from projectname_sdk.feature.base_feature import DigimonTcgBaseFeature
 
 
 def _client():

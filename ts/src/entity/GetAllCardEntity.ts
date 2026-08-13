@@ -37,7 +37,7 @@ class GetAllCardEntity extends DigimonTcgEntityBase<GetAllCard> {
 
 
 
-  async list(this: any, reqmatch?: GetAllCardListMatch, ctrl?: Control): Promise<GetAllCard[]> {
+  async list(this: any, reqmatch?: GetAllCardListMatch, ctrl?: Control): Promise<GetAllCardEntity[]> {
 
     const utility = this._utility
 

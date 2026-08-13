@@ -62,8 +62,8 @@ function makeCtrl(explain: boolean) {
 // Overrides configuration values with environment variables if available
 function envOverride(m: Record<string, any>) {
   if (
-    'TRUE' === process.env.DIGIMONTCG_TEST_LIVE ||
-    'TRUE' === process.env.DIGIMONTCG_TEST_OVERRIDE
+    'TRUE' === process.env.DIGIMON_TCG_TEST_LIVE ||
+    'TRUE' === process.env.DIGIMON_TCG_TEST_OVERRIDE
   ) {
     Object.entries(m).map(n => {
       let envval = process.env[n[0]]
@@ -74,7 +74,7 @@ function envOverride(m: Record<string, any>) {
     })
   }
 
-  m.DIGIMONTCG_TEST_EXPLAIN = process.env.DIGIMONTCG_TEST_EXPLAIN || m.DIGIMONTCG_TEST_EXPLAIN
+  m.DIGIMON_TCG_TEST_EXPLAIN = process.env.DIGIMON_TCG_TEST_EXPLAIN || m.DIGIMON_TCG_TEST_EXPLAIN
 
   return m
 }

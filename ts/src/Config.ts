@@ -21,7 +21,7 @@ class Config {
 
 
   main = {
-    name: 'ProjectName',
+    name: 'DigimonTcg',
   }
 
 
@@ -212,6 +212,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/getAllCards.php",
               "parts": [
@@ -474,6 +475,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/search.php",
               "parts": [
