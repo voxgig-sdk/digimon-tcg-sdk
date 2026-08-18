@@ -15,7 +15,7 @@ require_relative "../DigimonTcg_sdk"
 module DigimonTcgFeatureHarness
   # True when this SDK was generated with the named feature.
   def self.has_feature?(name)
-    f = DigimonTcgConfig.make_config["feature"]
+    f = DigimonTcgConfig.shared_config["feature"]
     f.is_a?(Hash) && !f[name].nil?
   end
 
