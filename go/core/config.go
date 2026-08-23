@@ -11,6 +11,9 @@ func MakeConfig() map[string]any {
 	return map[string]any{
 		"main": map[string]any{
 			"name": "DigimonTcg",
+			"slug": "digimon-tcg",
+			"version": "0.0.1",
+			"target": "go",
 		},
 		"feature": map[string]any{
 			"test": map[string]any{
@@ -34,74 +37,92 @@ func MakeConfig() map[string]any {
 				"fields": []any{
 					map[string]any{
 						"name": "attribute",
+						"short": "Digimon attribute (e.g., Vaccine, Virus, Data, Free)",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "cardnumber",
+						"short": "Unique card number identifier",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "cardset",
+						"short": "Card set or series this card belongs to",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "color",
+						"short": "Card color (e.g., Red, Blue, Yellow, Green, Black, Purple, White)",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "digivolve1cost",
+						"short": "First digivolution cost",
 						"type": "`$INTEGER`",
 					},
 					map[string]any{
 						"name": "digivolve1level",
+						"short": "Level required for first digivolution",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "digivolve2cost",
+						"short": "Second digivolution cost",
 						"type": "`$INTEGER`",
 					},
 					map[string]any{
 						"name": "digivolve2level",
+						"short": "Level required for second digivolution",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "dp",
+						"short": "Digimon power points",
 						"type": "`$INTEGER`",
 					},
 					map[string]any{
 						"name": "dpcost",
+						"short": "DP cost for evolution or abilities",
 						"type": "`$INTEGER`",
 					},
 					map[string]any{
 						"name": "effect",
+						"short": "Card effect text",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "image_url",
+						"short": "URL to the card image",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "level",
+						"short": "Card level",
 						"type": "`$INTEGER`",
 					},
 					map[string]any{
 						"name": "name",
+						"short": "Name of the card",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "playcost",
+						"short": "Cost to play the card",
 						"type": "`$INTEGER`",
 					},
 					map[string]any{
 						"name": "rarity",
+						"short": "Card rarity (e.g., Common, Uncommon, Rare, Super Rare)",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "stage",
+						"short": "Digimon evolution stage (e.g., Rookie, Champion, Ultimate, Mega)",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "type",
+						"short": "Type of card (e.g., Digimon, Tamer, Option)",
 						"type": "`$STRING`",
 					},
 				},
@@ -156,74 +177,92 @@ func MakeConfig() map[string]any {
 				"fields": []any{
 					map[string]any{
 						"name": "attribute",
+						"short": "Digimon attribute (e.g., Vaccine, Virus, Data, Free)",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "cardnumber",
+						"short": "Unique card number identifier",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "cardset",
+						"short": "Card set or series this card belongs to",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "color",
+						"short": "Card color (e.g., Red, Blue, Yellow, Green, Black, Purple, White)",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "digivolve1cost",
+						"short": "First digivolution cost",
 						"type": "`$INTEGER`",
 					},
 					map[string]any{
 						"name": "digivolve1level",
+						"short": "Level required for first digivolution",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "digivolve2cost",
+						"short": "Second digivolution cost",
 						"type": "`$INTEGER`",
 					},
 					map[string]any{
 						"name": "digivolve2level",
+						"short": "Level required for second digivolution",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "dp",
+						"short": "Digimon power points",
 						"type": "`$INTEGER`",
 					},
 					map[string]any{
 						"name": "dpcost",
+						"short": "DP cost for evolution or abilities",
 						"type": "`$INTEGER`",
 					},
 					map[string]any{
 						"name": "effect",
+						"short": "Card effect text",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "image_url",
+						"short": "URL to the card image",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "level",
+						"short": "Card level",
 						"type": "`$INTEGER`",
 					},
 					map[string]any{
 						"name": "name",
+						"short": "Name of the card",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "playcost",
+						"short": "Cost to play the card",
 						"type": "`$INTEGER`",
 					},
 					map[string]any{
 						"name": "rarity",
+						"short": "Card rarity (e.g., Common, Uncommon, Rare, Super Rare)",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "stage",
+						"short": "Digimon evolution stage (e.g., Rookie, Champion, Ultimate, Mega)",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "type",
+						"short": "Type of card (e.g., Digimon, Tamer, Option)",
 						"type": "`$STRING`",
 					},
 				},

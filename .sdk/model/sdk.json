@@ -36,108 +36,126 @@
               "active": true,
               "name": "attribute",
               "req": false,
+              "short": "Digimon attribute (e.g., Vaccine, Virus, Data, Free)",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "cardnumber",
               "req": false,
+              "short": "Unique card number identifier",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "cardset",
               "req": false,
+              "short": "Card set or series this card belongs to",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "color",
               "req": false,
+              "short": "Card color (e.g., Red, Blue, Yellow, Green, Black, Purple, White)",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "digivolve1cost",
               "req": false,
+              "short": "First digivolution cost",
               "type": "`$INTEGER`"
             },
             {
               "active": true,
               "name": "digivolve1level",
               "req": false,
+              "short": "Level required for first digivolution",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "digivolve2cost",
               "req": false,
+              "short": "Second digivolution cost",
               "type": "`$INTEGER`"
             },
             {
               "active": true,
               "name": "digivolve2level",
               "req": false,
+              "short": "Level required for second digivolution",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "dp",
               "req": false,
+              "short": "Digimon power points",
               "type": "`$INTEGER`"
             },
             {
               "active": true,
               "name": "dpcost",
               "req": false,
+              "short": "DP cost for evolution or abilities",
               "type": "`$INTEGER`"
             },
             {
               "active": true,
               "name": "effect",
               "req": false,
+              "short": "Card effect text",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "image_url",
               "req": false,
+              "short": "URL to the card image",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "level",
               "req": false,
+              "short": "Card level",
               "type": "`$INTEGER`"
             },
             {
               "active": true,
               "name": "name",
               "req": false,
+              "short": "Name of the card",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "playcost",
               "req": false,
+              "short": "Cost to play the card",
               "type": "`$INTEGER`"
             },
             {
               "active": true,
               "name": "rarity",
               "req": false,
+              "short": "Card rarity (e.g., Common, Uncommon, Rare, Super Rare)",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "stage",
               "req": false,
+              "short": "Digimon evolution stage (e.g., Rookie, Champion, Ultimate, Mega)",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "type",
               "req": false,
+              "short": "Type of card (e.g., Digimon, Tamer, Option)",
               "type": "`$STRING`"
             }
           ],
@@ -203,108 +221,126 @@
               "active": true,
               "name": "attribute",
               "req": false,
+              "short": "Digimon attribute (e.g., Vaccine, Virus, Data, Free)",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "cardnumber",
               "req": false,
+              "short": "Unique card number identifier",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "cardset",
               "req": false,
+              "short": "Card set or series this card belongs to",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "color",
               "req": false,
+              "short": "Card color (e.g., Red, Blue, Yellow, Green, Black, Purple, White)",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "digivolve1cost",
               "req": false,
+              "short": "First digivolution cost",
               "type": "`$INTEGER`"
             },
             {
               "active": true,
               "name": "digivolve1level",
               "req": false,
+              "short": "Level required for first digivolution",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "digivolve2cost",
               "req": false,
+              "short": "Second digivolution cost",
               "type": "`$INTEGER`"
             },
             {
               "active": true,
               "name": "digivolve2level",
               "req": false,
+              "short": "Level required for second digivolution",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "dp",
               "req": false,
+              "short": "Digimon power points",
               "type": "`$INTEGER`"
             },
             {
               "active": true,
               "name": "dpcost",
               "req": false,
+              "short": "DP cost for evolution or abilities",
               "type": "`$INTEGER`"
             },
             {
               "active": true,
               "name": "effect",
               "req": false,
+              "short": "Card effect text",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "image_url",
               "req": false,
+              "short": "URL to the card image",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "level",
               "req": false,
+              "short": "Card level",
               "type": "`$INTEGER`"
             },
             {
               "active": true,
               "name": "name",
               "req": false,
+              "short": "Name of the card",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "playcost",
               "req": false,
+              "short": "Cost to play the card",
               "type": "`$INTEGER`"
             },
             {
               "active": true,
               "name": "rarity",
               "req": false,
+              "short": "Card rarity (e.g., Common, Uncommon, Rare, Super Rare)",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "stage",
               "req": false,
+              "short": "Digimon evolution stage (e.g., Rookie, Champion, Ultimate, Mega)",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "type",
               "req": false,
+              "short": "Type of card (e.g., Digimon, Tamer, Option)",
               "type": "`$STRING`"
             }
           ],

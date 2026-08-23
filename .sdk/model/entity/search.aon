@@ -1,0 +1,244 @@
+# Entity: search
+
+main: kit: entity: search: {
+
+  alias: field: {}
+
+  fields: [
+    {
+      name: "attribute"
+      req: false
+      short: "Digimon attribute (e.g., Vaccine, Virus, Data, Free)"
+      type: "`$STRING`"
+    }
+    {
+      name: "cardnumber"
+      req: false
+      short: "Unique card number identifier"
+      type: "`$STRING`"
+    }
+    {
+      name: "cardset"
+      req: false
+      short: "Card set or series this card belongs to"
+      type: "`$STRING`"
+    }
+    {
+      name: "color"
+      req: false
+      short: "Card color (e.g., Red, Blue, Yellow, Green, Black, Purple, White)"
+      type: "`$STRING`"
+    }
+    {
+      name: "digivolve1cost"
+      req: false
+      short: "First digivolution cost"
+      type: "`$INTEGER`"
+    }
+    {
+      name: "digivolve1level"
+      req: false
+      short: "Level required for first digivolution"
+      type: "`$STRING`"
+    }
+    {
+      name: "digivolve2cost"
+      req: false
+      short: "Second digivolution cost"
+      type: "`$INTEGER`"
+    }
+    {
+      name: "digivolve2level"
+      req: false
+      short: "Level required for second digivolution"
+      type: "`$STRING`"
+    }
+    {
+      name: "dp"
+      req: false
+      short: "Digimon power points"
+      type: "`$INTEGER`"
+    }
+    {
+      name: "dpcost"
+      req: false
+      short: "DP cost for evolution or abilities"
+      type: "`$INTEGER`"
+    }
+    {
+      name: "effect"
+      req: false
+      short: "Card effect text"
+      type: "`$STRING`"
+    }
+    {
+      name: "image_url"
+      req: false
+      short: "URL to the card image"
+      type: "`$STRING`"
+    }
+    {
+      name: "level"
+      req: false
+      short: "Card level"
+      type: "`$INTEGER`"
+    }
+    {
+      name: "name"
+      req: false
+      short: "Name of the card"
+      type: "`$STRING`"
+    }
+    {
+      name: "playcost"
+      req: false
+      short: "Cost to play the card"
+      type: "`$INTEGER`"
+    }
+    {
+      name: "rarity"
+      req: false
+      short: "Card rarity (e.g., Common, Uncommon, Rare, Super Rare)"
+      type: "`$STRING`"
+    }
+    {
+      name: "stage"
+      req: false
+      short: "Digimon evolution stage (e.g., Rookie, Champion, Ultimate, Mega)"
+      type: "`$STRING`"
+    }
+    {
+      name: "type"
+      req: false
+      short: "Type of card (e.g., Digimon, Tamer, Option)"
+      type: "`$STRING`"
+    }
+  ]
+
+  name: "search"
+  op: {
+    list: {
+      name: "list"
+      points: [
+        {
+          args: {
+            query: [
+              {
+                kind: "query"
+                name: "attribute"
+                orig: "attribute"
+                reqd: false
+                type: "`$STRING`"
+              }
+              {
+                kind: "query"
+                name: "card"
+                orig: "card"
+                reqd: false
+                type: "`$STRING`"
+              }
+              {
+                kind: "query"
+                name: "cardnumber"
+                orig: "cardnumber"
+                reqd: false
+                type: "`$STRING`"
+              }
+              {
+                kind: "query"
+                name: "color"
+                orig: "color"
+                reqd: false
+                type: "`$STRING`"
+              }
+              {
+                kind: "query"
+                name: "dpcost"
+                orig: "dpcost"
+                reqd: false
+                type: "`$INTEGER`"
+              }
+              {
+                kind: "query"
+                name: "level"
+                orig: "level"
+                reqd: false
+                type: "`$INTEGER`"
+              }
+              {
+                kind: "query"
+                name: "playcost"
+                orig: "playcost"
+                reqd: false
+                type: "`$INTEGER`"
+              }
+              {
+                kind: "query"
+                name: "series"
+                orig: "series"
+                reqd: false
+                type: "`$STRING`"
+              }
+              {
+                kind: "query"
+                name: "sort"
+                orig: "sort"
+                reqd: false
+                type: "`$STRING`"
+              }
+              {
+                kind: "query"
+                name: "sortdirection"
+                orig: "sortdirection"
+                reqd: false
+                type: "`$STRING`"
+              }
+              {
+                kind: "query"
+                name: "stage"
+                orig: "stage"
+                reqd: false
+                type: "`$STRING`"
+              }
+              {
+                kind: "query"
+                name: "type"
+                orig: "type"
+                reqd: false
+                type: "`$STRING`"
+              }
+            ]
+          }
+          method: "GET"
+          orig: "/search.php"
+          parts: [
+            "search.php"
+          ]
+          select: {
+            exist: [
+              "attribute"
+              "card"
+              "cardnumber"
+              "color"
+              "dpcost"
+              "level"
+              "playcost"
+              "series"
+              "sort"
+              "sortdirection"
+              "stage"
+              "type"
+            ]
+          }
+          transform: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

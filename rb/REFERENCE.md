@@ -97,24 +97,24 @@ get_all_card = client.GetAllCard
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `attribute` | `String` | No |  |
-| `cardnumber` | `String` | No |  |
-| `cardset` | `String` | No |  |
-| `color` | `String` | No |  |
-| `digivolve1cost` | `Integer` | No |  |
-| `digivolve1level` | `String` | No |  |
-| `digivolve2cost` | `Integer` | No |  |
-| `digivolve2level` | `String` | No |  |
-| `dp` | `Integer` | No |  |
-| `dpcost` | `Integer` | No |  |
-| `effect` | `String` | No |  |
-| `image_url` | `String` | No |  |
-| `level` | `Integer` | No |  |
-| `name` | `String` | No |  |
-| `playcost` | `Integer` | No |  |
-| `rarity` | `String` | No |  |
-| `stage` | `String` | No |  |
-| `type` | `String` | No |  |
+| `attribute` | `String` | No | Digimon attribute (e.g., Vaccine, Virus, Data, Free) |
+| `cardnumber` | `String` | No | Unique card number identifier |
+| `cardset` | `String` | No | Card set or series this card belongs to |
+| `color` | `String` | No | Card color (e.g., Red, Blue, Yellow, Green, Black, Purple, White) |
+| `digivolve1cost` | `Integer` | No | First digivolution cost |
+| `digivolve1level` | `String` | No | Level required for first digivolution |
+| `digivolve2cost` | `Integer` | No | Second digivolution cost |
+| `digivolve2level` | `String` | No | Level required for second digivolution |
+| `dp` | `Integer` | No | Digimon power points |
+| `dpcost` | `Integer` | No | DP cost for evolution or abilities |
+| `effect` | `String` | No | Card effect text |
+| `image_url` | `String` | No | URL to the card image |
+| `level` | `Integer` | No | Card level |
+| `name` | `String` | No | Name of the card |
+| `playcost` | `Integer` | No | Cost to play the card |
+| `rarity` | `String` | No | Card rarity (e.g., Common, Uncommon, Rare, Super Rare) |
+| `stage` | `String` | No | Digimon evolution stage (e.g., Rookie, Champion, Ultimate, Mega) |
+| `type` | `String` | No | Type of card (e.g., Digimon, Tamer, Option) |
 
 ### Operations
 
@@ -166,24 +166,24 @@ search = client.Search
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `attribute` | `String` | No |  |
-| `cardnumber` | `String` | No |  |
-| `cardset` | `String` | No |  |
-| `color` | `String` | No |  |
-| `digivolve1cost` | `Integer` | No |  |
-| `digivolve1level` | `String` | No |  |
-| `digivolve2cost` | `Integer` | No |  |
-| `digivolve2level` | `String` | No |  |
-| `dp` | `Integer` | No |  |
-| `dpcost` | `Integer` | No |  |
-| `effect` | `String` | No |  |
-| `image_url` | `String` | No |  |
-| `level` | `Integer` | No |  |
-| `name` | `String` | No |  |
-| `playcost` | `Integer` | No |  |
-| `rarity` | `String` | No |  |
-| `stage` | `String` | No |  |
-| `type` | `String` | No |  |
+| `attribute` | `String` | No | Digimon attribute (e.g., Vaccine, Virus, Data, Free) |
+| `cardnumber` | `String` | No | Unique card number identifier |
+| `cardset` | `String` | No | Card set or series this card belongs to |
+| `color` | `String` | No | Card color (e.g., Red, Blue, Yellow, Green, Black, Purple, White) |
+| `digivolve1cost` | `Integer` | No | First digivolution cost |
+| `digivolve1level` | `String` | No | Level required for first digivolution |
+| `digivolve2cost` | `Integer` | No | Second digivolution cost |
+| `digivolve2level` | `String` | No | Level required for second digivolution |
+| `dp` | `Integer` | No | Digimon power points |
+| `dpcost` | `Integer` | No | DP cost for evolution or abilities |
+| `effect` | `String` | No | Card effect text |
+| `image_url` | `String` | No | URL to the card image |
+| `level` | `Integer` | No | Card level |
+| `name` | `String` | No | Name of the card |
+| `playcost` | `Integer` | No | Cost to play the card |
+| `rarity` | `String` | No | Card rarity (e.g., Common, Uncommon, Rare, Super Rare) |
+| `stage` | `String` | No | Digimon evolution stage (e.g., Rookie, Champion, Ultimate, Mega) |
+| `type` | `String` | No | Type of card (e.g., Digimon, Tamer, Option) |
 
 ### Operations
 

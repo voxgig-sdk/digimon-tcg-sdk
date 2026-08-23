@@ -19,9 +19,20 @@ class Config {
     return fi
   }
 
+  // False for a feature added at runtime via options.extend (station's
+  // adopt path) - the constructor uses this to skip makeFeature for names
+  // no generated class backs.
+  hasFeature(this: any, fn: string) {
+    return null != FEATURE_CLASS[fn]
+  }
+
 
   main = {
     name: 'DigimonTcg',
+        slug: "digimon-tcg",
+    version: "0.0.1",
+    target: "ts",
+
   }
 
 
@@ -59,74 +70,92 @@ class Config {
       "fields": [
         {
           "name": "attribute",
+          "short": "Digimon attribute (e.g., Vaccine, Virus, Data, Free)",
           "type": "`$STRING`"
         },
         {
           "name": "cardnumber",
+          "short": "Unique card number identifier",
           "type": "`$STRING`"
         },
         {
           "name": "cardset",
+          "short": "Card set or series this card belongs to",
           "type": "`$STRING`"
         },
         {
           "name": "color",
+          "short": "Card color (e.g., Red, Blue, Yellow, Green, Black, Purple, White)",
           "type": "`$STRING`"
         },
         {
           "name": "digivolve1cost",
+          "short": "First digivolution cost",
           "type": "`$INTEGER`"
         },
         {
           "name": "digivolve1level",
+          "short": "Level required for first digivolution",
           "type": "`$STRING`"
         },
         {
           "name": "digivolve2cost",
+          "short": "Second digivolution cost",
           "type": "`$INTEGER`"
         },
         {
           "name": "digivolve2level",
+          "short": "Level required for second digivolution",
           "type": "`$STRING`"
         },
         {
           "name": "dp",
+          "short": "Digimon power points",
           "type": "`$INTEGER`"
         },
         {
           "name": "dpcost",
+          "short": "DP cost for evolution or abilities",
           "type": "`$INTEGER`"
         },
         {
           "name": "effect",
+          "short": "Card effect text",
           "type": "`$STRING`"
         },
         {
           "name": "image_url",
+          "short": "URL to the card image",
           "type": "`$STRING`"
         },
         {
           "name": "level",
+          "short": "Card level",
           "type": "`$INTEGER`"
         },
         {
           "name": "name",
+          "short": "Name of the card",
           "type": "`$STRING`"
         },
         {
           "name": "playcost",
+          "short": "Cost to play the card",
           "type": "`$INTEGER`"
         },
         {
           "name": "rarity",
+          "short": "Card rarity (e.g., Common, Uncommon, Rare, Super Rare)",
           "type": "`$STRING`"
         },
         {
           "name": "stage",
+          "short": "Digimon evolution stage (e.g., Rookie, Champion, Ultimate, Mega)",
           "type": "`$STRING`"
         },
         {
           "name": "type",
+          "short": "Type of card (e.g., Digimon, Tamer, Option)",
           "type": "`$STRING`"
         }
       ],
@@ -181,74 +210,92 @@ class Config {
       "fields": [
         {
           "name": "attribute",
+          "short": "Digimon attribute (e.g., Vaccine, Virus, Data, Free)",
           "type": "`$STRING`"
         },
         {
           "name": "cardnumber",
+          "short": "Unique card number identifier",
           "type": "`$STRING`"
         },
         {
           "name": "cardset",
+          "short": "Card set or series this card belongs to",
           "type": "`$STRING`"
         },
         {
           "name": "color",
+          "short": "Card color (e.g., Red, Blue, Yellow, Green, Black, Purple, White)",
           "type": "`$STRING`"
         },
         {
           "name": "digivolve1cost",
+          "short": "First digivolution cost",
           "type": "`$INTEGER`"
         },
         {
           "name": "digivolve1level",
+          "short": "Level required for first digivolution",
           "type": "`$STRING`"
         },
         {
           "name": "digivolve2cost",
+          "short": "Second digivolution cost",
           "type": "`$INTEGER`"
         },
         {
           "name": "digivolve2level",
+          "short": "Level required for second digivolution",
           "type": "`$STRING`"
         },
         {
           "name": "dp",
+          "short": "Digimon power points",
           "type": "`$INTEGER`"
         },
         {
           "name": "dpcost",
+          "short": "DP cost for evolution or abilities",
           "type": "`$INTEGER`"
         },
         {
           "name": "effect",
+          "short": "Card effect text",
           "type": "`$STRING`"
         },
         {
           "name": "image_url",
+          "short": "URL to the card image",
           "type": "`$STRING`"
         },
         {
           "name": "level",
+          "short": "Card level",
           "type": "`$INTEGER`"
         },
         {
           "name": "name",
+          "short": "Name of the card",
           "type": "`$STRING`"
         },
         {
           "name": "playcost",
+          "short": "Cost to play the card",
           "type": "`$INTEGER`"
         },
         {
           "name": "rarity",
+          "short": "Card rarity (e.g., Common, Uncommon, Rare, Super Rare)",
           "type": "`$STRING`"
         },
         {
           "name": "stage",
+          "short": "Digimon evolution stage (e.g., Rookie, Champion, Ultimate, Mega)",
           "type": "`$STRING`"
         },
         {
           "name": "type",
+          "short": "Type of card (e.g., Digimon, Tamer, Option)",
           "type": "`$STRING`"
         }
       ],
