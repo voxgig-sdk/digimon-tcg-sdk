@@ -42,6 +42,7 @@ class DigimonTcgConfig
           'options' => [
             'active' => false,
           ],
+          'transport' => 'base',
         ],
             ],
             "options" => [
