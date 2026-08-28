@@ -38,24 +38,8 @@ class GetAllCard(TypedDict, total=False):
 
 
 class GetAllCardListMatch(TypedDict, total=False):
-    attribute: str
-    cardnumber: str
-    cardset: str
-    color: str
-    digivolve1cost: int
-    digivolve1level: str
-    digivolve2cost: int
-    digivolve2level: str
-    dp: int
-    dpcost: int
-    effect: str
-    image_url: str
-    level: int
-    name: str
-    playcost: int
-    rarity: str
-    stage: str
-    type: str
+    sort: str
+    sortdirection: str
 
 
 class Search(TypedDict, total=False):
@@ -81,20 +65,14 @@ class Search(TypedDict, total=False):
 
 class SearchListMatch(TypedDict, total=False):
     attribute: str
+    card: str
     cardnumber: str
-    cardset: str
     color: str
-    digivolve1cost: int
-    digivolve1level: str
-    digivolve2cost: int
-    digivolve2level: str
-    dp: int
     dpcost: int
-    effect: str
-    image_url: str
     level: int
-    name: str
     playcost: int
-    rarity: str
+    series: str
+    sort: str
+    sortdirection: str
     stage: str
     type: str

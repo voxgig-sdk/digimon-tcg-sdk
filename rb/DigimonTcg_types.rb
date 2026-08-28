@@ -87,78 +87,14 @@ GetAllCard = Struct.new(
 
 # Request payload for GetAllCard#list.
 #
-# @!attribute [rw] attribute
+# @!attribute [rw] sort
 #   @return [String, nil]
 #
-# @!attribute [rw] cardnumber
-#   @return [String, nil]
-#
-# @!attribute [rw] cardset
-#   @return [String, nil]
-#
-# @!attribute [rw] color
-#   @return [String, nil]
-#
-# @!attribute [rw] digivolve1cost
-#   @return [Integer, nil]
-#
-# @!attribute [rw] digivolve1level
-#   @return [String, nil]
-#
-# @!attribute [rw] digivolve2cost
-#   @return [Integer, nil]
-#
-# @!attribute [rw] digivolve2level
-#   @return [String, nil]
-#
-# @!attribute [rw] dp
-#   @return [Integer, nil]
-#
-# @!attribute [rw] dpcost
-#   @return [Integer, nil]
-#
-# @!attribute [rw] effect
-#   @return [String, nil]
-#
-# @!attribute [rw] image_url
-#   @return [String, nil]
-#
-# @!attribute [rw] level
-#   @return [Integer, nil]
-#
-# @!attribute [rw] name
-#   @return [String, nil]
-#
-# @!attribute [rw] playcost
-#   @return [Integer, nil]
-#
-# @!attribute [rw] rarity
-#   @return [String, nil]
-#
-# @!attribute [rw] stage
-#   @return [String, nil]
-#
-# @!attribute [rw] type
+# @!attribute [rw] sortdirection
 #   @return [String, nil]
 GetAllCardListMatch = Struct.new(
-  :attribute,
-  :cardnumber,
-  :cardset,
-  :color,
-  :digivolve1cost,
-  :digivolve1level,
-  :digivolve2cost,
-  :digivolve2level,
-  :dp,
-  :dpcost,
-  :effect,
-  :image_url,
-  :level,
-  :name,
-  :playcost,
-  :rarity,
-  :stage,
-  :type,
+  :sort,
+  :sortdirection,
   keyword_init: true
 )
 
@@ -244,49 +180,31 @@ Search = Struct.new(
 # @!attribute [rw] attribute
 #   @return [String, nil]
 #
-# @!attribute [rw] cardnumber
+# @!attribute [rw] card
 #   @return [String, nil]
 #
-# @!attribute [rw] cardset
+# @!attribute [rw] cardnumber
 #   @return [String, nil]
 #
 # @!attribute [rw] color
 #   @return [String, nil]
 #
-# @!attribute [rw] digivolve1cost
-#   @return [Integer, nil]
-#
-# @!attribute [rw] digivolve1level
-#   @return [String, nil]
-#
-# @!attribute [rw] digivolve2cost
-#   @return [Integer, nil]
-#
-# @!attribute [rw] digivolve2level
-#   @return [String, nil]
-#
-# @!attribute [rw] dp
-#   @return [Integer, nil]
-#
 # @!attribute [rw] dpcost
 #   @return [Integer, nil]
-#
-# @!attribute [rw] effect
-#   @return [String, nil]
-#
-# @!attribute [rw] image_url
-#   @return [String, nil]
 #
 # @!attribute [rw] level
 #   @return [Integer, nil]
 #
-# @!attribute [rw] name
-#   @return [String, nil]
-#
 # @!attribute [rw] playcost
 #   @return [Integer, nil]
 #
-# @!attribute [rw] rarity
+# @!attribute [rw] series
+#   @return [String, nil]
+#
+# @!attribute [rw] sort
+#   @return [String, nil]
+#
+# @!attribute [rw] sortdirection
 #   @return [String, nil]
 #
 # @!attribute [rw] stage
@@ -296,21 +214,15 @@ Search = Struct.new(
 #   @return [String, nil]
 SearchListMatch = Struct.new(
   :attribute,
+  :card,
   :cardnumber,
-  :cardset,
   :color,
-  :digivolve1cost,
-  :digivolve1level,
-  :digivolve2cost,
-  :digivolve2level,
-  :dp,
   :dpcost,
-  :effect,
-  :image_url,
   :level,
-  :name,
   :playcost,
-  :rarity,
+  :series,
+  :sort,
+  :sortdirection,
   :stage,
   :type,
   keyword_init: true

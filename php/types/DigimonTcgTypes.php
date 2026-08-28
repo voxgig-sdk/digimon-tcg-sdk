@@ -38,24 +38,8 @@ class GetAllCard
 /** Request payload for GetAllCard#list. */
 class GetAllCardListMatch
 {
-    public ?string $attribute = null;
-    public ?string $cardnumber = null;
-    public ?string $cardset = null;
-    public ?string $color = null;
-    public ?int $digivolve1cost = null;
-    public ?string $digivolve1level = null;
-    public ?int $digivolve2cost = null;
-    public ?string $digivolve2level = null;
-    public ?int $dp = null;
-    public ?int $dpcost = null;
-    public ?string $effect = null;
-    public ?string $image_url = null;
-    public ?int $level = null;
-    public ?string $name = null;
-    public ?int $playcost = null;
-    public ?string $rarity = null;
-    public ?string $stage = null;
-    public ?string $type = null;
+    public ?string $sort = null;
+    public ?string $sortdirection = null;
 }
 
 /** Search entity data model. */
@@ -85,21 +69,15 @@ class Search
 class SearchListMatch
 {
     public ?string $attribute = null;
+    public ?string $card = null;
     public ?string $cardnumber = null;
-    public ?string $cardset = null;
     public ?string $color = null;
-    public ?int $digivolve1cost = null;
-    public ?string $digivolve1level = null;
-    public ?int $digivolve2cost = null;
-    public ?string $digivolve2level = null;
-    public ?int $dp = null;
     public ?int $dpcost = null;
-    public ?string $effect = null;
-    public ?string $image_url = null;
     public ?int $level = null;
-    public ?string $name = null;
     public ?int $playcost = null;
-    public ?string $rarity = null;
+    public ?string $series = null;
+    public ?string $sort = null;
+    public ?string $sortdirection = null;
     public ?string $stage = null;
     public ?string $type = null;
 }

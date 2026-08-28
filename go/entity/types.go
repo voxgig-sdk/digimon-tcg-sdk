@@ -36,24 +36,8 @@ type GetAllCard struct {
 
 // GetAllCardListMatch is the typed request payload for GetAllCard.ListTyped.
 type GetAllCardListMatch struct {
-	Attribute *string `json:"attribute,omitempty"`
-	Cardnumber *string `json:"cardnumber,omitempty"`
-	Cardset *string `json:"cardset,omitempty"`
-	Color *string `json:"color,omitempty"`
-	Digivolve1cost *int `json:"digivolve1cost,omitempty"`
-	Digivolve1level *string `json:"digivolve1level,omitempty"`
-	Digivolve2cost *int `json:"digivolve2cost,omitempty"`
-	Digivolve2level *string `json:"digivolve2level,omitempty"`
-	Dp *int `json:"dp,omitempty"`
-	Dpcost *int `json:"dpcost,omitempty"`
-	Effect *string `json:"effect,omitempty"`
-	ImageUrl *string `json:"image_url,omitempty"`
-	Level *int `json:"level,omitempty"`
-	Name *string `json:"name,omitempty"`
-	Playcost *int `json:"playcost,omitempty"`
-	Rarity *string `json:"rarity,omitempty"`
-	Stage *string `json:"stage,omitempty"`
-	Type *string `json:"type,omitempty"`
+	Sort *string `json:"sort,omitempty"`
+	Sortdirection *string `json:"sortdirection,omitempty"`
 }
 
 // Search is the typed data model for the search entity.
@@ -81,21 +65,15 @@ type Search struct {
 // SearchListMatch is the typed request payload for Search.ListTyped.
 type SearchListMatch struct {
 	Attribute *string `json:"attribute,omitempty"`
+	Card *string `json:"card,omitempty"`
 	Cardnumber *string `json:"cardnumber,omitempty"`
-	Cardset *string `json:"cardset,omitempty"`
 	Color *string `json:"color,omitempty"`
-	Digivolve1cost *int `json:"digivolve1cost,omitempty"`
-	Digivolve1level *string `json:"digivolve1level,omitempty"`
-	Digivolve2cost *int `json:"digivolve2cost,omitempty"`
-	Digivolve2level *string `json:"digivolve2level,omitempty"`
-	Dp *int `json:"dp,omitempty"`
 	Dpcost *int `json:"dpcost,omitempty"`
-	Effect *string `json:"effect,omitempty"`
-	ImageUrl *string `json:"image_url,omitempty"`
 	Level *int `json:"level,omitempty"`
-	Name *string `json:"name,omitempty"`
 	Playcost *int `json:"playcost,omitempty"`
-	Rarity *string `json:"rarity,omitempty"`
+	Series *string `json:"series,omitempty"`
+	Sort *string `json:"sort,omitempty"`
+	Sortdirection *string `json:"sortdirection,omitempty"`
 	Stage *string `json:"stage,omitempty"`
 	Type *string `json:"type,omitempty"`
 }

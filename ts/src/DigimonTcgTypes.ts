@@ -27,24 +27,8 @@ export interface GetAllCard {
 }
 
 export interface GetAllCardListMatch {
-  attribute?: string
-  cardnumber?: string
-  cardset?: string
-  color?: string
-  digivolve1cost?: number
-  digivolve1level?: string
-  digivolve2cost?: number
-  digivolve2level?: string
-  dp?: number
-  dpcost?: number
-  effect?: string
-  image_url?: string
-  level?: number
-  name?: string
-  playcost?: number
-  rarity?: string
-  stage?: string
-  type?: string
+  sort?: string
+  sortdirection?: string
 }
 
 export interface Search {
@@ -70,21 +54,15 @@ export interface Search {
 
 export interface SearchListMatch {
   attribute?: string
+  card?: string
   cardnumber?: string
-  cardset?: string
   color?: string
-  digivolve1cost?: number
-  digivolve1level?: string
-  digivolve2cost?: number
-  digivolve2level?: string
-  dp?: number
   dpcost?: number
-  effect?: string
-  image_url?: string
   level?: number
-  name?: string
   playcost?: number
-  rarity?: string
+  series?: string
+  sort?: string
+  sortdirection?: string
   stage?: string
   type?: string
 }
