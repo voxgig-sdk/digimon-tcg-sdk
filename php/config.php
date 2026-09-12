@@ -175,8 +175,10 @@ class DigimonTcgConfig
                   'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/getAllCards.php',
-                  'parts' => [
-                    'getAllCards.php',
+                  'segments' => [
+                    [
+                      'lit' => 'getAllCards.php',
+                    ],
                   ],
                   'select' => [
                     'exist' => [
@@ -187,6 +189,9 @@ class DigimonTcgConfig
                   'transform' => [
                     'req' => '`reqdata`',
                     'res' => '`body`',
+                  ],
+                  'parts' => [
+                    'getAllCards.php',
                   ],
                 ],
               ],
@@ -375,8 +380,10 @@ class DigimonTcgConfig
                   'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/search.php',
-                  'parts' => [
-                    'search.php',
+                  'segments' => [
+                    [
+                      'lit' => 'search.php',
+                    ],
                   ],
                   'select' => [
                     'exist' => [
@@ -397,6 +404,9 @@ class DigimonTcgConfig
                   'transform' => [
                     'req' => '`reqdata`',
                     'res' => '`body`',
+                  ],
+                  'parts' => [
+                    'search.php',
                   ],
                 ],
               ],

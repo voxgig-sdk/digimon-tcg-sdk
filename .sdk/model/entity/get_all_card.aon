@@ -141,8 +141,10 @@ main: kit: entity: get_all_card: {
           }
           method: "GET"
           orig: "/getAllCards.php"
-          parts: [
-            "getAllCards.php"
+          segments: [
+            {
+              lit: "getAllCards.php"
+            }
           ]
           select: {
             exist: [

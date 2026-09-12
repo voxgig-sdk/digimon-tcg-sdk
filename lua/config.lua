@@ -149,8 +149,10 @@ local function make_config()
                 ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/getAllCards.php",
-                ["parts"] = {
-                  "getAllCards.php",
+                ["segments"] = {
+                  {
+                    ["lit"] = "getAllCards.php",
+                  },
                 },
                 ["select"] = {
                   ["exist"] = {
@@ -161,6 +163,9 @@ local function make_config()
                 ["transform"] = {
                   ["req"] = "`reqdata`",
                   ["res"] = "`body`",
+                },
+                ["parts"] = {
+                  "getAllCards.php",
                 },
               },
             },
@@ -349,8 +354,10 @@ local function make_config()
                 ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/search.php",
-                ["parts"] = {
-                  "search.php",
+                ["segments"] = {
+                  {
+                    ["lit"] = "search.php",
+                  },
                 },
                 ["select"] = {
                   ["exist"] = {
@@ -371,6 +378,9 @@ local function make_config()
                 ["transform"] = {
                   ["req"] = "`reqdata`",
                   ["res"] = "`body`",
+                },
+                ["parts"] = {
+                  "search.php",
                 },
               },
             },

@@ -1,6 +1,14 @@
 # DigimonTcg SDK configuration
 
 
+# The sekreto plugin DEFINITIONS the model selected per feature, imported
+# above by name from the modules the catalogue's active `plugin.def`
+# entries declare. Handed to each feature (secrets builds its Sekreto
+# with them): a provider kind not listed here is unknown to that SDK.
+FEATURE_PLUGINS = {
+}
+
+
 _shared_config = None
 
 
@@ -170,8 +178,10 @@ def make_config():
                 "kind": "http",
                 "method": "GET",
                 "orig": "/getAllCards.php",
-                "parts": [
-                  "getAllCards.php",
+                "segments": [
+                  {
+                    "lit": "getAllCards.php",
+                  },
                 ],
                 "select": {
                   "exist": [
@@ -183,6 +193,9 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
+                "parts": [
+                  "getAllCards.php",
+                ],
               },
             ],
           },
@@ -370,8 +383,10 @@ def make_config():
                 "kind": "http",
                 "method": "GET",
                 "orig": "/search.php",
-                "parts": [
-                  "search.php",
+                "segments": [
+                  {
+                    "lit": "search.php",
+                  },
                 ],
                 "select": {
                   "exist": [
@@ -393,6 +408,9 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
+                "parts": [
+                  "search.php",
+                ],
               },
             ],
           },
