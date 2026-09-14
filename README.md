@@ -105,7 +105,7 @@ local results, err = client:GetAllCard():list()
 
 | Language | Package | Install |
 | --- | --- | --- |
-| TypeScript | `@voxgig-sdk/digimon-tcg` | publish pending — [install from git tag](https://github.com/voxgig-sdk/digimon-tcg-sdk/releases) |
+| TypeScript | `@voxgig-sdk/digimon-tcg-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/digimon-tcg-sdk/releases) |
 | Python | `voxgig-sdk-digimon-tcg` | publish pending — [install from git tag](https://github.com/voxgig-sdk/digimon-tcg-sdk/releases) |
 | PHP | `voxgig-sdk/digimon-tcg` | publish pending — [install from git tag](https://github.com/voxgig-sdk/digimon-tcg-sdk/releases) |
 | Golang | `github.com/voxgig-sdk/digimon-tcg-sdk/go` | `go get github.com/voxgig-sdk/digimon-tcg-sdk/go@latest` |
@@ -119,7 +119,7 @@ local results, err = client:GetAllCard():list()
 ### TypeScript
 
 ```ts
-import { DigimonTcgSDK } from '@voxgig-sdk/digimon-tcg'
+import { DigimonTcgSDK } from '@voxgig-sdk/digimon-tcg-sdk'
 
 const client = new DigimonTcgSDK()
 

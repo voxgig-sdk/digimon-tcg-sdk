@@ -28,7 +28,7 @@ loading a specific record.
 ### 1. Create a client
 
 ```ts
-import { DigimonTcgSDK } from '@voxgig-sdk/digimon-tcg'
+import { DigimonTcgSDK } from '@voxgig-sdk/digimon-tcg-sdk'
 
 const client = new DigimonTcgSDK()
 ```
@@ -505,7 +505,7 @@ digimon-tcg/
 Import the SDK from the package root:
 
 ```ts
-import { DigimonTcgSDK } from '@voxgig-sdk/digimon-tcg'
+import { DigimonTcgSDK } from '@voxgig-sdk/digimon-tcg-sdk'
 ```
 
 ### Entity state
