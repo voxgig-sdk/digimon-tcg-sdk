@@ -1,12 +1,18 @@
 # DigimonTcg SDK feature factory
 
 from digimontcg_sdk.feature.base_feature import DigimonTcgBaseFeature
+from digimontcg_sdk.feature.ratelimit_feature import DigimonTcgRatelimitFeature
+from digimontcg_sdk.feature.retry_feature import DigimonTcgRetryFeature
 from digimontcg_sdk.feature.test_feature import DigimonTcgTestFeature
+from digimontcg_sdk.feature.timeout_feature import DigimonTcgTimeoutFeature
 
 
 _FEATURES = {
     "base": lambda: DigimonTcgBaseFeature(),
+    "ratelimit": lambda: DigimonTcgRatelimitFeature(),
+    "retry": lambda: DigimonTcgRetryFeature(),
     "test": lambda: DigimonTcgTestFeature(),
+    "timeout": lambda: DigimonTcgTimeoutFeature(),
 }
 
 

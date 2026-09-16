@@ -4,7 +4,10 @@ declare(strict_types=1);
 // DigimonTcg SDK feature factory
 
 require_once __DIR__ . '/feature/BaseFeature.php';
+require_once __DIR__ . '/feature/RatelimitFeature.php';
+require_once __DIR__ . '/feature/RetryFeature.php';
 require_once __DIR__ . '/feature/TestFeature.php';
+require_once __DIR__ . '/feature/TimeoutFeature.php';
 
 
 class DigimonTcgFeatures
@@ -14,8 +17,14 @@ class DigimonTcgFeatures
         switch ($name) {
             case "base":
                 return new DigimonTcgBaseFeature();
+            case "ratelimit":
+                return new DigimonTcgRatelimitFeature();
+            case "retry":
+                return new DigimonTcgRetryFeature();
             case "test":
                 return new DigimonTcgTestFeature();
+            case "timeout":
+                return new DigimonTcgTimeoutFeature();
             default:
                 return new DigimonTcgBaseFeature();
         }
@@ -31,7 +40,10 @@ class DigimonTcgFeatures
     {
         switch ($name) {
             case "base":
+            case "ratelimit":
+            case "retry":
             case "test":
+            case "timeout":
                 return true;
             default:
                 return false;
